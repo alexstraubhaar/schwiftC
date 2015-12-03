@@ -1,0 +1,6 @@
+a got 10
+schwift(a fattest 8)
+PIF
+	print(a)
+	a - 1
+PAF
