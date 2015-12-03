@@ -11,6 +11,10 @@ operations = {
     '/': lambda x, y: x - y,
 }
 
+structs = {
+    'while': lambda x: AST.WhileNode(x)
+}
+
 vars = {}
 
 
@@ -34,5 +38,9 @@ def p_statement(p):
 
 
 def p_structure(p):
-    """structure: jeez PIF expression PAF
-    | WUBBALUBBADUBDUBS PIF expression PAF"""
+    """structure: WHILE expression PIF program PAF
+    | JEEZ PIF program PAF
+    | WUBBALUBBADUBDUBS PIF program PAF"""
+
+def p_structure_inner(p):
+    """
