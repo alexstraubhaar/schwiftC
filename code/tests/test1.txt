@@ -1,0 +1,7 @@
+a got 10~
+jeez(a fattest 8)
+PIF
+	print(a)~
+	a - 1~
+	a / 4~
+PAF
