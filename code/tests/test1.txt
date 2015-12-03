@@ -1,4 +1,4 @@
-a got 10~
+hey a got 10~
 jeez(a fattest 8)
 PIF
 	print(a)~

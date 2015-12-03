@@ -15,9 +15,24 @@ vars = {}
 
 
 def p_program_statement(p):
-    ''' program : statement
-     | statement '~' program'''
+    """ program : statement
+     | statement '~' program"""
     try:
         p[0] = AST.ProgramNode([p[1]] + p[3].children)
     except IndexError:
         p[0] = AST.ProgramNode(p[1])
+
+
+def p_statement(p):
+    """statement : assignation
+    | structure
+    | SHOWMEWHATYOUGOT expression"""
+    try:
+        p[0] = AST.PrintNode(p[2])
+    except IndexError:
+        p[0] = p[1]
+
+
+def p_structure(p):
+    """structure: jeez PIF expression PAF
+    | WUBBALUBBADUBDUBS PIF expression PAF"""
