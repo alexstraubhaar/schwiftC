@@ -1,6 +1,6 @@
-__author__ = 'Alex'
-
 import ply.lex as lex
+
+__author__ = 'Alex'
 
 reserved_words = {
     'got',
@@ -24,13 +24,14 @@ reserved_words = {
 }
 
 tokens = (
-             'NUMBER',
-             'ADD_OP',
-             'MUL_OP',
-             'IDENTIFIER'
-         ) + tuple(map(lambda s: s.upper(), reserved_words))
+     'NUMBER',
+     'ADD_OP',
+     'MUL_OP',
+     'IDENTIFIER'
+) + tuple(map(lambda s: s.upper(), reserved_words))
 
-literals = '()'
+literals = '()~'
+
 
 def t_IDENTIFIER(t):
     r'[A-Za-z]\w*'
@@ -81,5 +82,7 @@ if __name__ == '__main__':
     lex.input(prog)
     while 1:
         tok = lex.token()
-        if not tok: break
-        print("line %d: %s(%s)" % (tok.lineno, tok.type, tok.value))
+        if not tok:
+            break
+
+    print("line %d: %s(%s)" % (tok.lineno, tok.type, tok.value))

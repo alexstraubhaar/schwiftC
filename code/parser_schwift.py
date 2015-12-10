@@ -19,7 +19,7 @@ vars = {}
 
 
 def p_program_statement(p):
-    """ program : statement
+    """ program : statement '~'
      | statement '~' program"""
     try:
         p[0] = AST.ProgramNode([p[1]] + p[3].children)
@@ -42,5 +42,6 @@ def p_structure(p):
     | JEEZ PIF program PAF
     | WUBBALUBBADUBDUBS PIF program PAF"""
 
+
 def p_structure_inner(p):
-    """
+    """  """
