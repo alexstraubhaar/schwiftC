@@ -43,4 +43,4 @@ def p_structure(p):
     | WUBBALUBBADUBDUBS PIF program PAF"""
 
 def p_structure_inner(p):
-    """
+    """ kek """

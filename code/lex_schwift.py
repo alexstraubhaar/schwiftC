@@ -1,4 +1,5 @@
-__author__ = 'Alex'
+
+__authors__ = 'Alex and *BURP* Thomas'
 
 import ply.lex as lex
 
@@ -30,10 +31,10 @@ tokens = (
              'IDENTIFIER'
          ) + tuple(map(lambda s: s.upper(), reserved_words))
 
-literals = '()'
+literals = '()~'
 
 def t_IDENTIFIER(t):
-    r'[A-Za-z]\w*'
+    r'[A-Za-z_]\w*'
     if t.value in reserved_words:
         t.type = t.value.upper()
     return t
@@ -64,7 +65,7 @@ def t_newline(t):
     t.lexer.lineno += len(t.value)
 
 
-t_ignore = '\t'
+t_ignore = ' \t'
 
 
 def t_error(t):
