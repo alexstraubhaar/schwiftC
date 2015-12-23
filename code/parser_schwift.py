@@ -43,5 +43,6 @@ def p_structure(p):
     | WUBBALUBBADUBDUBS PIF program PAF"""
 
 
-def p_structure_inner(p):
-    """  """
+def p_assign(p):
+    '''assignation : IDENTIFIER got expression '~' '''
+    p[0] = AST.AssignNode([AST.TokenNode(p[1]), p[3]])

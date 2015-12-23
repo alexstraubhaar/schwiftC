@@ -65,7 +65,7 @@ def t_newline(t):
     t.lexer.lineno += len(t.value)
 
 
-t_ignore = '\t'
+t_ignore = ' \t'
 
 
 def t_error(t):
@@ -84,5 +84,4 @@ if __name__ == '__main__':
         tok = lex.token()
         if not tok:
             break
-
-    print("line %d: %s(%s)" % (tok.lineno, tok.type, tok.value))
+        print("line %d: %s(%s)" % (tok.lineno, tok.type, tok.value))
