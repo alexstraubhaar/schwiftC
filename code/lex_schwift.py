@@ -1,6 +1,6 @@
 import ply.lex as lex
 
-__author__ = 'Alex'
+__authors__ = 'Alex and *BURP* Thomas'
 
 reserved_words = {
     'got',
@@ -32,9 +32,8 @@ tokens = (
 
 literals = '()~'
 
-
 def t_IDENTIFIER(t):
-    r'[A-Za-z]\w*'
+    r'[A-Za-z_]\w*'
     if t.value in reserved_words:
         t.type = t.value.upper()
     return t

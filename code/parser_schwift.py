@@ -46,3 +46,7 @@ def p_structure(p):
 def p_assign(p):
     '''assignation : IDENTIFIER got expression '~' '''
     p[0] = AST.AssignNode([AST.TokenNode(p[1]), p[3]])
+
+
+def p_structure_inner(p):
+    """ kek """
