@@ -5,8 +5,8 @@ représentation d'arbres syntaxiques abstraits.
 Sûrement plein de bugs et autres surprises. À prendre comme un
 "work in progress"...
 Notamment, l'utilisation de pydot pour représenter un arbre syntaxique cousu
-est une utilisation un peu "limite" de graphviz. Ça marche, mais le layout n'est
-pas toujours optimal...
+est une utilisation un peu "limite" de graphviz. Ça marche, mais le layout
+n'est pas toujours optimal...
 '''
 
 import pydot
@@ -81,12 +81,14 @@ class Node:
             edge = pydot.Edge(self.ID, c.ID)
             edge.set_color(color)
             edge.set_arrowsize('.5')
-            # Les arrêtes correspondant aux coutures ne sont pas prises en compte
-            # pour le layout du graphe. Ceci permet de garder l'arbre dans sa représentation
-            # "standard", mais peut provoquer des surprises pour le trajet parfois un peu
-            # tarabiscoté des coutures...
-            # En commantant cette ligne, le layout sera bien meilleur, mais l'arbre nettement
-            # moins reconnaissable.
+
+            ''' Les arrêtes correspondant aux coutures ne sont pas prises en compte
+            pour le layout du graphe. Ceci permet de garder l'arbre dans sa représentation
+            "standard", mais peut provoquer des surprises pour le trajet parfois un peu
+            tarabiscoté des coutures...
+            En commantant cette ligne, le layout sera bien meilleur, mais l'arbre
+            nettement moins reconnaissable. '''
+
             edge.set_constraint('false')
             if label:
                 edge.set_taillabel(str(i))
