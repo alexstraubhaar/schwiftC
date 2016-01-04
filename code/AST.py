@@ -143,6 +143,22 @@ class EntryNode(Node):
         Node.__init__(self, None)
 
 
+class JeezNode(Node):
+    type = "Jeez"
+
+
+class SHOWMEWHATYOUGOTNode(Node):
+    type = "Show me what you got"
+
+
+class WubbalubbadubdubsNode(Node):
+    type = "Wubbalubbadubdubs"
+
+
+class CandoNode(Node):
+    type = "Can do"
+
+
 def add_to_class(_class):
     def decorator(func):
         setattr(_class, func.__name__, func)
