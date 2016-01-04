@@ -1,5 +1,7 @@
+# coding: latin-1
 
-''' Petit module utilitaire pour la construction, la manipulation et la
+'''
+Petit module utilitaire pour la construction, la manipulation et la
 représentation d'arbres syntaxiques abstraits.
 
 Sûrement plein de bugs et autres surprises. À prendre comme un
@@ -146,19 +148,19 @@ class EntryNode(Node):
 
 
 class JeezNode(Node):
-    type = "Jeez"
+    type = 'Jeez'
 
 
 class SHOWMEWHATYOUGOTNode(Node):
-    type = "Show me what you got"
+    type = 'Show me what you got'
 
 
 class WubbalubbadubdubsNode(Node):
-    type = "Wubbalubbadubdubs"
+    type = 'Wubbalubbadubdubs'
 
 
 class CandoNode(Node):
-    type = "Can do"
+    type = 'Can do'
 
 
 def add_to_class(_class):
