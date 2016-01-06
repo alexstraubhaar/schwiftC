@@ -1,1 +1,75 @@
 Created by PLY version 3.7 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    IS
+    MPFH
+    ISIT
+    ADD_OP
+    SHUTUPMORTY
+    FATTEST
+    THONG
+    MUL_OP
+    GOT
+    DIDIT
+    HEY
+    SCHWIFT
+    TINIER
+    NUMBER
+    FATTER
+    TINIEST
+    ISNOT
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement ~
+Rule 2     program -> statement ~ program
+Rule 3     statement -> assignation
+Rule 4     statement -> structure
+Rule 5     statement -> SHOWMEWHATYOUGOT expression
+Rule 6     structure -> WHILE expression PIF program PAF
+Rule 7     structure -> JEEZ PIF program PAF
+Rule 8     structure -> WUBBALUBBADUBDUBS PIF program PAF
+Rule 9     structure -> CANDO PIF program PAF WHILE expression
+Rule 10    assignation -> IDENTIFIER got expression ~
+
+Terminals, with rules where they appear
+
+ADD_OP               : 
+CANDO                : 9
+DIDIT                : 
+FATTER               : 
+FATTEST              : 
+GOT                  : 
+HEY                  : 
+IDENTIFIER           : 10
+IS                   : 
+ISIT                 : 
+ISNOT                : 
+JEEZ                 : 7
+MPFH                 : 
+MUL_OP               : 
+NUMBER               : 
+PAF                  : 6 7 8 9
+PIF                  : 6 7 8 9
+SCHWIFT              : 
+SHUTUPMORTY          : 
+THONG                : 
+TINIER               : 
+TINIEST              : 
+error                : 
+~                    : 1 2 10
+
+Nonterminals, with rules where they appear
+
+SHOWMEWHATYOUGOT     : 5
+WHILE                : 6 9
+WUBBALUBBADUBDUBS    : 8
+assignation          : 3
+expression           : 5 6 9 10
+got                  : 10
+program              : 2 6 7 8 9 0
+statement            : 1 2
+structure            : 4
+

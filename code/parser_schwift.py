@@ -38,7 +38,7 @@ def p_statement(p):
 
 
 def p_structure(p):
-    """structure: WHILE expression PIF program PAF
+    """structure : WHILE expression PIF program PAF
     | JEEZ PIF program PAF
     | WUBBALUBBADUBDUBS PIF program PAF
     | CANDO PIF program PAF WHILE expression"""
