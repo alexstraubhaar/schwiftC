@@ -115,7 +115,6 @@ class TokenNode(Node):
 
 
 class OpNode(Node):
-
     def __init__(self, op, children):
         Node.__init__(self, children)
         self.op = op
@@ -148,19 +147,27 @@ class EntryNode(Node):
 
 
 class JeezNode(Node):
-    type = 'Jeez'
+    type = 'jeez'
 
 
 class SHOWMEWHATYOUGOTNode(Node):
-    type = 'Show me what you got'
+    type = 'showmewhatyougot'
 
 
 class WubbalubbadubdubsNode(Node):
-    type = 'Wubbalubbadubdubs'
+    type = 'wubbalubbadubdubs'
 
 
 class CandoNode(Node):
-    type = 'Can do'
+    type = 'cando'
+
+
+class CaseNode(Node):
+    type = 'case'
+
+
+class SchwiftNode(Node):
+    type = 'schwift'
 
 
 def add_to_class(_class):

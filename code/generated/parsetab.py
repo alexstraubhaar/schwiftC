@@ -5,9 +5,9 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = '74DF2753492D09AC1607B0271F046D51'
+_lr_signature = '6C82688C91FB09FF682D95393793625A'
     
-_lr_action_items = {'CANDO':([0,33,73,78,93,],[2,2,2,2,2,]),'SCHMECKLE':([0,26,33,73,78,93,],[3,3,3,3,3,3,]),'MPFH':([0,26,33,73,78,93,],[4,4,4,4,4,4,]),'ADD_OP':([14,17,18,22,25,27,28,29,30,31,34,37,38,39,41,42,43,45,46,47,48,49,51,52,53,54,57,58,59,61,62,64,65,66,67,68,69,70,71,72,84,86,90,],[31,31,31,31,31,-17,-16,31,47,31,47,31,31,31,31,31,47,47,31,31,-19,31,31,31,31,31,47,47,47,47,47,31,-18,-15,-14,47,47,47,47,47,31,31,47,]),'~':([6,12,16,27,28,30,43,44,48,57,58,59,61,62,63,65,66,67,68,69,70,71,72,75,76,77,79,80,81,82,87,89,91,95,],[-3,-4,33,-17,-16,-5,63,64,-19,75,76,77,79,80,-26,-18,-15,-14,82,-11,-12,-13,-10,-23,-24,-20,-21,-25,86,-22,-7,-6,-9,-8,]),'MUL_OP':([27,28,30,34,43,45,48,57,58,59,61,62,65,66,67,68,69,70,71,72,90,],[-17,-16,46,46,46,46,-19,46,46,46,46,46,-18,-15,46,46,46,46,46,46,46,]),'PAF':([27,28,33,36,48,50,65,66,67,69,70,71,72,83,85,94,],[-17,-16,-1,56,-19,-2,-18,-15,-14,-11,-12,-13,-10,87,89,95,]),'FATTER':([27,28,34,48,65,66,67,],[-17,-16,51,-19,-18,-15,-14,]),'JEEZ':([0,33,73,78,93,],[1,1,1,1,1,]),'NUMBER':([14,17,18,22,25,29,31,37,38,39,41,42,46,47,49,51,52,53,54,64,84,86,],[28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,]),'(':([1,8,13,14,17,18,22,25,29,31,37,38,39,41,42,46,47,49,51,52,53,54,64,74,84,86,],[17,22,26,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,29,84,29,29,]),'WHALE':([0,33,56,73,78,93,],[8,8,74,8,8,8,]),'THONG':([0,26,33,73,78,93,],[9,9,9,9,9,9,]),'PIF':([2,55,60,92,],[18,73,78,93,]),'WUBBALUBBADUBDUBS':([0,33,73,78,93,],[13,13,13,13,13,]),'GOT':([11,19,20,21,23,24,32,],[25,37,38,39,41,42,49,]),'FAKE':([0,26,33,73,78,93,],[10,10,10,10,10,10,]),'HEY':([0,26,33,73,78,93,],[5,5,5,5,5,5,]),'$end':([7,33,50,],[0,-1,-2,]),'IDENTIFIER':([0,3,4,5,9,10,14,15,17,18,22,25,26,29,31,33,37,38,39,41,42,46,47,49,51,52,53,54,64,73,78,84,86,93,],[11,19,20,21,23,24,27,32,27,27,27,27,11,27,27,11,27,27,27,27,27,27,27,27,27,27,27,27,27,11,11,27,27,11,]),')':([27,28,35,40,45,48,65,66,67,69,70,71,72,88,90,],[-17,-16,55,60,65,-19,-18,-15,-14,-11,-12,-13,-10,91,92,]),'TINIEST':([27,28,34,48,65,66,67,],[-17,-16,52,-19,-18,-15,-14,]),'TINIER':([27,28,34,48,65,66,67,],[-17,-16,53,-19,-18,-15,-14,]),'SHOWMEWHATYOUGOT':([0,33,73,78,93,],[14,14,14,14,14,]),'ISIT':([0,26,33,73,78,93,],[15,15,15,15,15,15,]),'FATTEST':([27,28,34,48,65,66,67,],[-17,-16,54,-19,-18,-15,-14,]),}
+_lr_action_items = {'THONG':([0,21,26,76,83,104,109,110,],[1,1,1,1,1,1,1,1,]),'JEEZ':([0,26,76,83,104,109,110,],[2,2,2,2,2,2,2,]),'ADD_OP':([17,19,20,24,28,31,32,33,34,35,36,38,41,42,46,47,48,49,50,51,52,53,54,56,57,58,59,60,61,63,64,65,68,70,71,72,73,74,77,78,79,80,81,82,94,95,98,101,105,],[32,32,32,32,32,32,32,-22,52,-21,32,52,32,32,32,52,32,32,52,-24,32,32,52,32,32,32,32,32,32,32,52,52,52,52,52,-23,-19,-20,52,52,52,52,52,52,32,32,32,52,52,]),'HEYRICK':([88,117,],[98,98,]),'$end':([8,26,45,],[0,-1,-2,]),'WHALE':([0,26,66,76,83,104,109,110,],[3,3,87,3,3,3,3,3,]),'FATTER':([33,35,38,51,72,73,74,],[-22,-21,58,-24,-23,-19,-20,]),'NUMBER':([17,19,20,24,28,31,32,36,41,42,46,48,49,52,53,56,57,58,59,60,61,63,94,95,98,],[35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,]),'FATTEST':([33,35,38,51,72,73,74,],[-22,-21,61,-24,-23,-19,-20,]),'ISNOT':([33,35,38,51,72,73,74,],[-22,-21,56,-24,-23,-19,-20,]),'(':([2,3,4,11,17,19,20,24,28,31,32,36,41,42,46,48,49,52,53,56,57,58,59,60,61,63,87,94,95,98,],[19,20,21,25,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,95,31,31,31,]),'PAF':([26,33,35,43,45,51,72,73,74,77,78,79,80,81,82,92,93,96,113,114,118,],[-1,-22,-21,66,-2,-24,-23,-19,-20,-18,-17,-14,-16,-15,-13,99,100,103,116,-11,-12,]),'WUBBALUBBADUBDUBS':([0,26,76,83,104,109,110,],[4,4,4,4,4,4,4,]),'TINIER':([33,35,38,51,72,73,74,],[-22,-21,59,-24,-23,-19,-20,]),'MPFH':([0,21,26,76,83,104,109,110,],[6,6,6,6,6,6,6,6,]),':':([33,35,51,72,73,74,97,105,],[-22,-21,-24,-23,-19,-20,104,109,]),'TINIEST':([33,35,38,51,72,73,74,],[-22,-21,60,-24,-23,-19,-20,]),'ISIT':([0,21,26,76,83,104,109,110,],[7,7,7,7,7,7,7,7,]),')':([33,35,37,39,44,50,51,72,73,74,77,78,79,80,81,82,101,102,],[-22,-21,55,62,67,72,-24,-23,-19,-20,-18,-17,-14,-16,-15,-13,106,107,]),'IS':([33,35,38,51,72,73,74,],[-22,-21,57,-24,-23,-19,-20,]),'CANDO':([0,26,76,83,104,109,110,],[10,10,10,10,10,10,10,]),'SCHWIFT':([0,26,76,83,104,109,110,],[11,11,11,11,11,11,11,]),'DEFAULT':([88,117,],[97,97,]),'GOT':([14,18,22,23,27,29,30,],[28,36,41,42,46,48,49,]),'HEY':([0,21,26,76,83,104,109,110,],[13,13,13,13,13,13,13,13,]),'SHUTUPMORTY':([26,45,108,112,],[-1,-2,111,115,]),'SHOWMEWHATYOUGOT':([0,26,76,83,104,109,110,],[17,17,17,17,17,17,17,]),'FAKE':([0,21,26,76,83,104,109,110,],[15,15,15,15,15,15,15,15,]),'PIF':([10,55,62,67,106,],[24,76,83,88,110,]),'SCHMECKLE':([0,21,26,76,83,104,109,110,],[16,16,16,16,16,16,16,16,]),'MUL_OP':([33,34,35,38,47,50,51,54,64,65,68,70,71,72,73,74,77,78,79,80,81,82,101,105,],[-22,53,-21,53,53,53,-24,53,53,53,53,53,53,-23,53,-20,53,53,53,53,53,53,53,53,]),'~':([5,9,12,33,34,35,40,47,51,54,64,65,68,69,70,71,72,73,74,75,77,78,79,80,81,82,84,85,86,89,90,91,99,100,103,107,111,115,116,],[-4,-3,26,-22,-5,-21,63,69,-24,75,85,86,89,-31,90,91,-23,-19,-20,-26,-18,-17,-14,-16,-15,-13,94,-29,-27,-25,-30,-28,-7,-6,-10,-9,114,117,-8,]),'IDENTIFIER':([0,1,6,7,13,15,16,17,19,20,21,24,25,26,28,31,32,36,41,42,46,48,49,52,53,56,57,58,59,60,61,63,76,83,94,95,98,104,109,110,],[14,18,22,23,27,29,30,33,33,33,14,33,44,14,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,14,14,33,33,33,14,14,14,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'assignation':([0,26,33,73,78,93,],[6,44,6,6,6,6,]),'condition':([17,18,22,64,84,],[35,36,40,81,88,]),'program':([0,33,73,78,93,],[7,50,83,85,94,]),'structure':([0,33,73,78,93,],[12,12,12,12,12,]),'expression':([14,17,18,22,25,29,31,37,38,39,41,42,46,47,49,51,52,53,54,64,84,86,],[30,34,34,34,43,45,48,57,58,59,61,62,66,67,68,69,70,71,72,34,34,90,]),'statement':([0,33,73,78,93,],[16,16,16,16,16,]),}
+_lr_goto_items = {'cases':([88,117,],[96,118,]),'condition':([19,20,24,63,95,],[37,39,43,84,102,]),'structure':([0,26,76,83,104,109,110,],[5,5,5,5,5,5,5,]),'program':([0,26,76,83,104,109,110,],[8,45,92,93,108,112,113,]),'assignation':([0,21,26,76,83,104,109,110,],[9,40,9,9,9,9,9,9,]),'statement':([0,26,76,83,104,109,110,],[12,12,12,12,12,12,12,]),'expression':([17,19,20,24,28,31,32,36,41,42,46,48,49,52,53,56,57,58,59,60,61,63,94,95,98,],[34,38,38,38,47,50,51,54,64,65,68,70,71,73,74,77,78,79,80,81,82,38,101,38,105,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -35,21 +35,26 @@ _lr_productions = [
   ('structure -> JEEZ ( condition ) PIF program PAF','structure',7,'p_structure','parser_schwift.py',47),
   ('structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF','structure',11,'p_structure_for','parser_schwift.py',51),
   ('structure -> CANDO PIF condition PAF WHALE ( condition )','structure',8,'p_structure_do','parser_schwift.py',56),
-  ('condition -> expression FATTEST expression','condition',3,'p_condition','parser_schwift.py',61),
-  ('condition -> expression FATTER expression','condition',3,'p_condition','parser_schwift.py',62),
-  ('condition -> expression TINIEST expression','condition',3,'p_condition','parser_schwift.py',63),
-  ('condition -> expression TINIER expression','condition',3,'p_condition','parser_schwift.py',64),
-  ('expression -> expression ADD_OP expression','expression',3,'p_expression_op','parser_schwift.py',74),
-  ('expression -> expression MUL_OP expression','expression',3,'p_expression_op','parser_schwift.py',75),
-  ('expression -> NUMBER','expression',1,'p_expression_number_or_identifier','parser_schwift.py',80),
-  ('expression -> IDENTIFIER','expression',1,'p_expression_number_or_identifier','parser_schwift.py',81),
-  ('expression -> ( expression )','expression',3,'p_expression_paren','parser_schwift.py',86),
-  ('expression -> ADD_OP expression','expression',2,'p_expression_minus','parser_schwift.py',91),
-  ('assignation -> HEY IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',97),
-  ('assignation -> THONG IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',98),
-  ('assignation -> ISIT IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',99),
-  ('assignation -> SCHMECKLE IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',100),
-  ('assignation -> MPFH IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',101),
-  ('assignation -> FAKE IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',102),
-  ('assignation -> IDENTIFIER GOT expression ~','assignation',4,'p_reassign','parser_schwift.py',107),
+  ('structure -> SCHWIFT ( IDENTIFIER ) PIF cases PAF','structure',7,'p_structure_switch','parser_schwift.py',61),
+  ('cases -> DEFAULT : program SHUTUPMORTY ~','cases',5,'p_structure_cases','parser_schwift.py',66),
+  ('cases -> HEYRICK expression : program SHUTUPMORTY ~ cases','cases',7,'p_structure_cases','parser_schwift.py',67),
+  ('condition -> expression FATTEST expression','condition',3,'p_condition','parser_schwift.py',72),
+  ('condition -> expression FATTER expression','condition',3,'p_condition','parser_schwift.py',73),
+  ('condition -> expression TINIEST expression','condition',3,'p_condition','parser_schwift.py',74),
+  ('condition -> expression TINIER expression','condition',3,'p_condition','parser_schwift.py',75),
+  ('condition -> expression IS expression','condition',3,'p_condition','parser_schwift.py',76),
+  ('condition -> expression ISNOT expression','condition',3,'p_condition','parser_schwift.py',77),
+  ('expression -> expression ADD_OP expression','expression',3,'p_expression_op','parser_schwift.py',83),
+  ('expression -> expression MUL_OP expression','expression',3,'p_expression_op','parser_schwift.py',84),
+  ('expression -> NUMBER','expression',1,'p_expression_number_or_identifier','parser_schwift.py',89),
+  ('expression -> IDENTIFIER','expression',1,'p_expression_number_or_identifier','parser_schwift.py',90),
+  ('expression -> ( expression )','expression',3,'p_expression_paren','parser_schwift.py',95),
+  ('expression -> ADD_OP expression','expression',2,'p_expression_minus','parser_schwift.py',100),
+  ('assignation -> HEY IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',106),
+  ('assignation -> THONG IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',107),
+  ('assignation -> ISIT IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',108),
+  ('assignation -> SCHMECKLE IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',109),
+  ('assignation -> MPFH IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',110),
+  ('assignation -> FAKE IDENTIFIER GOT expression ~','assignation',5,'p_assign','parser_schwift.py',111),
+  ('assignation -> IDENTIFIER GOT expression ~','assignation',4,'p_reassign','parser_schwift.py',116),
 ]

@@ -58,19 +58,24 @@ def p_structure_do(p):
 
 
 def p_structure_switch(p):
-    """structure : SCHWIFT '(' IDENTIFIER ')' PIF """
+    """structure : SCHWIFT '(' IDENTIFIER ')' PIF cases PAF"""
+    p[0] = AST.SchwiftNode([p[3], p[5]])
+
+
+def p_structure_cases(p):
+    """cases : DEFAULT ':' program SHUTUPMORTY '~'
+    | HEYRICK expression ':' program SHUTUPMORTY '~' cases"""
+    p[0] = AST.CaseNode([p[2], p[4], p[7]])
 
 
 def p_condition(p):
     """condition : expression FATTEST expression
     | expression FATTER expression
     | expression TINIEST expression
-    | expression TINIER expression"""
+    | expression TINIER expression
+    | expression IS expression
+    | expression ISNOT expression"""
     p[0] = conditions[p[2]](p[1], p[3])
-
-
-def p_structure_inner(p):
-    """  """
 
 
 # EXPRESSIONS #

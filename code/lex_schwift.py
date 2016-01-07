@@ -25,11 +25,15 @@ reserved_words = {
     'schwift',  # switch
     'heyrick',  # case
     'shutupmorty',  # break
+    'default',
     'cando',  # do
-    'didit',  # return
     'showmewhatyougot',  # print
     'wubbalubbadubdubs',  # for
     'whale',  # while
+
+    # Methods
+    # 'meeseeks', # def
+    # 'didit',  # return
 
     # PIF PAF
     'pif',  # {
@@ -43,7 +47,7 @@ tokens = (
              'IDENTIFIER'
          ) + tuple(map(lambda s: s.upper(), reserved_words))
 
-literals = '()~'
+literals = '()~:'
 
 
 def t_IDENTIFIER(t):
