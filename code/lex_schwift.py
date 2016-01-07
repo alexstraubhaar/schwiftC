@@ -3,58 +3,47 @@ import ply.lex as lex
 __authors__ = 'Alex and *BURP* Thomas'
 
 reserved_words = {
-<<<<<<< HEAD
-    'got',              # =
-    'tiniest',          # <
-    'tinier',           # <=
-    'fattest',          # >
-    'fatter',           # >=
-    'is',               # ==
-    'isnot',            # !=
-    'hey',              # int
-    'thong',            # string
-    'isit',             # bool
-    'mpfh',             # char
-    'jeez',             # if
-    'shutupmorty',      # break
-    'cando',            # do
-    'schwift',          # switch
-    'didit',            # return
-    'PIF',              # {
-    'PAF',              # }
-=======
-    'got',
-    'tiniest',
-    'tinier',
-    'fattest',
-    'fatter',
-    'is',
-    'isnot',
-    'hey',
-    'thong',
-    'isit',
-    'mpfh',
-    'jeez',
-    'shutupmorty',
-    'cando',
-    'schwift',
-    'didit',
-    'pif',
-    'paf',
-    'showmewhatyougot',
-    'wubbalubbadubdubs',
-    'whale'
->>>>>>> 0a8979f107f57a25aa9ce8390aeaba5bd69d3a6c
+    # Conditions
+    'got',  # =
+    'tiniest',  # <
+    'tinier',  # <=
+    'fattest',  # >
+    'fatter',  # >=
+    'is',  # ==
+    'isnot',  # !=
+
+    # Var types
+    'hey',  # int
+    'fake',  # float
+    'thong',  # string
+    'isit',  # bool
+    'schmeckle',  # char
+    'mpfh',  # void
+
+    # Structures
+    'jeez',  # if
+    'shutupmorty',  # break
+    'cando',  # do
+    'schwift',  # switch
+    'didit',  # return
+    'showmewhatyougot',  # print
+    'wubbalubbadubdubs',  # for
+    'whale',  # while
+
+    # PIF PAF
+    'pif',  # {
+    'paf'  # }
 }
 
 tokens = (
-     'NUMBER',
-     'ADD_OP',
-     'MUL_OP',
-     'IDENTIFIER'
-) + tuple(map(lambda s: s.upper(), reserved_words))
+             'NUMBER',
+             'ADD_OP',
+             'MUL_OP',
+             'IDENTIFIER'
+         ) + tuple(map(lambda s: s.upper(), reserved_words))
 
 literals = '()~'
+
 
 def t_IDENTIFIER(t):
     r'[A-Za-z_]\w*'

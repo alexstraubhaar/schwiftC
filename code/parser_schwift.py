@@ -15,7 +15,9 @@ conditions = {
     'FATTEST': lambda x, y: x > y,
     'FATTER': lambda x, y: x >= y,
     'TINIEST': lambda x, y: x < y,
-    'TINIER': lambda x, y: x <= y
+    'TINIER': lambda x, y: x <= y,
+    'IS': lambda x, y: x == y,
+    'ISNOT': lambda x, y: x != y,
 }
 
 vars = {}
@@ -42,7 +44,7 @@ def p_statement(p):
 
 def p_structure(p):
     """structure : WHALE '(' condition ')' PIF program PAF
-    | JEEZ '(' condition ') PIF program PAF"""
+    | JEEZ '(' condition ')' PIF program PAF"""
 
 
 def p_structure_for(p):
@@ -51,7 +53,7 @@ def p_structure_for(p):
 
 
 def p_structure_do(p):
-    """structure : CANDO PIF condition PAF WHILE '(' condition ')'"""
+    """structure : CANDO PIF condition PAF WHALE '(' condition ')'"""
     p[0] = AST.CandoNode([p[7], p[3]])
 
 
@@ -92,7 +94,17 @@ def p_expression_minus(p):
 
 # ASSIGNATION #
 def p_assign(p):
-    """assignation : IDENTIFIER got expression '~' """
+    """assignation : HEY IDENTIFIER GOT expression '~'
+    | THONG IDENTIFIER GOT expression '~'
+    | ISIT IDENTIFIER GOT expression '~'
+    | SCHMECKLE IDENTIFIER GOT expression '~'
+    | MPFH IDENTIFIER GOT expression '~'
+    | FAKE IDENTIFIER GOT expression '~'"""
+    p[0] = AST.AssignNode([AST.TokenNode(p[2]), p[4]])
+
+
+def p_reassign(p):
+    """assignation : IDENTIFIER GOT expression '~' """
     p[0] = AST.AssignNode([AST.TokenNode(p[1]), p[3]])
 
 
@@ -102,6 +114,12 @@ precedence = (
     ('left', 'MUL_OP'),
     ('right', 'UMINUS')
 )
+
+
+# YACC UTILS #
+def p_error(p):
+    print("Syntax error in line %d" % p.lineno)
+    yacc.errok()
 
 
 def parse(program):
