@@ -45,6 +45,7 @@ def p_statement(p):
 def p_structure(p):
     """structure : WHALE '(' condition ')' PIF program PAF
     | JEEZ '(' condition ')' PIF program PAF"""
+    p[0] = AST.WhaleNode([p[2], p[4]])
 
 
 def p_structure_for(p):
