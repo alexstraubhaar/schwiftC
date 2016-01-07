@@ -2,6 +2,7 @@ Created by PLY version 3.8 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
+<<<<<<< HEAD
     SHUTUPMORTY
     IS
     ISNOT
@@ -12,6 +13,25 @@ Unused terminals:
     THONG
     MPFH
     HEY
+=======
+    THONG
+    DIDIT
+    IS
+    SHUTUPMORTY
+    FATTEST
+    FATTER
+    TINIEST
+    ISIT
+    TINIER
+    ISNOT
+    HEY
+    NUMBER
+    SCHWIFT
+    MPFH
+    ADD_OP
+    MUL_OP
+    GOT
+>>>>>>> 0a8979f107f57a25aa9ce8390aeaba5bd69d3a6c
 
 Grammar
 
@@ -21,7 +41,7 @@ Rule 2     program -> statement ~ program
 Rule 3     statement -> assignation
 Rule 4     statement -> structure
 Rule 5     statement -> SHOWMEWHATYOUGOT expression
-Rule 6     structure -> WHILE expression PIF program PAF
+Rule 6     structure -> WHALE expression PIF program PAF
 Rule 7     structure -> JEEZ PIF program PAF
 Rule 8     structure -> WUBBALUBBADUBDUBS PIF program PAF
 Rule 9     structure -> CANDO PIF program PAF WHILE expression
@@ -59,18 +79,24 @@ NUMBER               : 16
 PAF                  : 6 7 8 9
 PIF                  : 6 7 8 9
 SCHWIFT              : 
+SHOWMEWHATYOUGOT     : 5
 SHUTUPMORTY          : 
 THONG                : 
+<<<<<<< HEAD
 TINIER               : 13
 TINIEST              : 12
+=======
+TINIER               : 
+TINIEST              : 
+WHALE                : 6
+WUBBALUBBADUBDUBS    : 8
+>>>>>>> 0a8979f107f57a25aa9ce8390aeaba5bd69d3a6c
 error                : 
 ~                    : 1 2 20
 
 Nonterminals, with rules where they appear
 
-SHOWMEWHATYOUGOT     : 5
-WHILE                : 6 9
-WUBBALUBBADUBDUBS    : 8
+WHILE                : 9
 assignation          : 3
 condition            : 
 expression           : 5 6 9 10 10 11 11 12 12 13 13 14 14 15 15 18 19 20

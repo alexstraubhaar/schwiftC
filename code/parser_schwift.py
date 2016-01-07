@@ -41,7 +41,7 @@ def p_statement(p):
 
 
 def p_structure(p):
-    """structure : WHILE '(' condition ')' PIF program PAF
+    """structure : WHALE '(' condition ')' PIF program PAF
     | JEEZ '(' condition ') PIF program PAF"""
 
 

@@ -3,6 +3,7 @@ import ply.lex as lex
 __authors__ = 'Alex and *BURP* Thomas'
 
 reserved_words = {
+<<<<<<< HEAD
     'got',              # =
     'tiniest',          # <
     'tinier',           # <=
@@ -21,6 +22,29 @@ reserved_words = {
     'didit',            # return
     'PIF',              # {
     'PAF',              # }
+=======
+    'got',
+    'tiniest',
+    'tinier',
+    'fattest',
+    'fatter',
+    'is',
+    'isnot',
+    'hey',
+    'thong',
+    'isit',
+    'mpfh',
+    'jeez',
+    'shutupmorty',
+    'cando',
+    'schwift',
+    'didit',
+    'pif',
+    'paf',
+    'showmewhatyougot',
+    'wubbalubbadubdubs',
+    'whale'
+>>>>>>> 0a8979f107f57a25aa9ce8390aeaba5bd69d3a6c
 }
 
 tokens = (
