@@ -57,6 +57,10 @@ def p_structure_do(p):
     p[0] = AST.CandoNode([p[7], p[3]])
 
 
+def p_structure_switch(p):
+    """structure : SCHWIFT '(' IDENTIFIER ')' PIF """
+
+
 def p_condition(p):
     """condition : expression FATTEST expression
     | expression FATTER expression
