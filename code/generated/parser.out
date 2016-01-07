@@ -104,138 +104,103 @@ state 0
     (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
     (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
 
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
 
-    program                        shift and go to state 8
-    structure                      shift and go to state 5
-    assignation                    shift and go to state 9
-    statement                      shift and go to state 12
+    structure                      shift and go to state 9
+    statement                      shift and go to state 5
+    program                        shift and go to state 3
+    assignation                    shift and go to state 17
 
 state 1
 
-    (26) assignation -> THONG . IDENTIFIER GOT expression ~
+    (25) assignation -> HEY . IDENTIFIER GOT expression ~
 
     IDENTIFIER      shift and go to state 18
 
 
 state 2
 
-    (7) structure -> JEEZ . ( condition ) PIF program PAF
+    (10) structure -> SCHWIFT . ( IDENTIFIER ) PIF cases PAF
 
     (               shift and go to state 19
 
 
 state 3
 
-    (6) structure -> WHALE . ( condition ) PIF program PAF
+    (0) S' -> program .
 
-    (               shift and go to state 20
 
 
 state 4
 
-    (8) structure -> WUBBALUBBADUBDUBS . ( assignation ~ condition ~ expression ) PIF program PAF
+    (30) assignation -> FAKE . IDENTIFIER GOT expression ~
 
-    (               shift and go to state 21
+    IDENTIFIER      shift and go to state 20
 
 
 state 5
+
+    (1) program -> statement . ~
+    (2) program -> statement . ~ program
+
+    ~               shift and go to state 21
+
+
+state 6
+
+    (8) structure -> WUBBALUBBADUBDUBS . ( assignation ~ condition ~ expression ) PIF program PAF
+
+    (               shift and go to state 22
+
+
+state 7
+
+    (9) structure -> CANDO . PIF condition PAF WHALE ( condition )
+
+    PIF             shift and go to state 23
+
+
+state 8
+
+    (6) structure -> WHALE . ( condition ) PIF program PAF
+
+    (               shift and go to state 24
+
+
+state 9
 
     (4) statement -> structure .
 
     ~               reduce using rule 4 (statement -> structure .)
 
 
-state 6
-
-    (29) assignation -> MPFH . IDENTIFIER GOT expression ~
-
-    IDENTIFIER      shift and go to state 22
-
-
-state 7
-
-    (27) assignation -> ISIT . IDENTIFIER GOT expression ~
-
-    IDENTIFIER      shift and go to state 23
-
-
-state 8
-
-    (0) S' -> program .
-
-
-
-state 9
-
-    (3) statement -> assignation .
-
-    ~               reduce using rule 3 (statement -> assignation .)
-
-
 state 10
 
-    (9) structure -> CANDO . PIF condition PAF WHALE ( condition )
+    (31) assignation -> IDENTIFIER . GOT expression ~
 
-    PIF             shift and go to state 24
+    GOT             shift and go to state 25
 
 
 state 11
 
-    (10) structure -> SCHWIFT . ( IDENTIFIER ) PIF cases PAF
+    (26) assignation -> THONG . IDENTIFIER GOT expression ~
 
-    (               shift and go to state 25
+    IDENTIFIER      shift and go to state 26
 
 
 state 12
-
-    (1) program -> statement . ~
-    (2) program -> statement . ~ program
-
-    ~               shift and go to state 26
-
-
-state 13
-
-    (25) assignation -> HEY . IDENTIFIER GOT expression ~
-
-    IDENTIFIER      shift and go to state 27
-
-
-state 14
-
-    (31) assignation -> IDENTIFIER . GOT expression ~
-
-    GOT             shift and go to state 28
-
-
-state 15
-
-    (30) assignation -> FAKE . IDENTIFIER GOT expression ~
-
-    IDENTIFIER      shift and go to state 29
-
-
-state 16
-
-    (28) assignation -> SCHMECKLE . IDENTIFIER GOT expression ~
-
-    IDENTIFIER      shift and go to state 30
-
-
-state 17
 
     (5) statement -> SHOWMEWHATYOUGOT . expression
     (19) expression -> . expression ADD_OP expression
@@ -245,135 +210,70 @@ state 17
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
-    expression                     shift and go to state 34
+    expression                     shift and go to state 31
+
+state 13
+
+    (28) assignation -> SCHMECKLE . IDENTIFIER GOT expression ~
+
+    IDENTIFIER      shift and go to state 32
+
+
+state 14
+
+    (7) structure -> JEEZ . ( condition ) PIF program PAF
+
+    (               shift and go to state 33
+
+
+state 15
+
+    (27) assignation -> ISIT . IDENTIFIER GOT expression ~
+
+    IDENTIFIER      shift and go to state 34
+
+
+state 16
+
+    (29) assignation -> MPFH . IDENTIFIER GOT expression ~
+
+    IDENTIFIER      shift and go to state 35
+
+
+state 17
+
+    (3) statement -> assignation .
+
+    ~               reduce using rule 3 (statement -> assignation .)
+
 
 state 18
 
-    (26) assignation -> THONG IDENTIFIER . GOT expression ~
+    (25) assignation -> HEY IDENTIFIER . GOT expression ~
 
     GOT             shift and go to state 36
 
 
 state 19
 
-    (7) structure -> JEEZ ( . condition ) PIF program PAF
-    (13) condition -> . expression FATTEST expression
-    (14) condition -> . expression FATTER expression
-    (15) condition -> . expression TINIEST expression
-    (16) condition -> . expression TINIER expression
-    (17) condition -> . expression IS expression
-    (18) condition -> . expression ISNOT expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
+    (10) structure -> SCHWIFT ( . IDENTIFIER ) PIF cases PAF
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    IDENTIFIER      shift and go to state 37
 
-    expression                     shift and go to state 38
-    condition                      shift and go to state 37
 
 state 20
 
-    (6) structure -> WHALE ( . condition ) PIF program PAF
-    (13) condition -> . expression FATTEST expression
-    (14) condition -> . expression FATTER expression
-    (15) condition -> . expression TINIEST expression
-    (16) condition -> . expression TINIER expression
-    (17) condition -> . expression IS expression
-    (18) condition -> . expression ISNOT expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
+    (30) assignation -> FAKE IDENTIFIER . GOT expression ~
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    GOT             shift and go to state 38
 
-    expression                     shift and go to state 38
-    condition                      shift and go to state 39
 
 state 21
-
-    (8) structure -> WUBBALUBBADUBDUBS ( . assignation ~ condition ~ expression ) PIF program PAF
-    (25) assignation -> . HEY IDENTIFIER GOT expression ~
-    (26) assignation -> . THONG IDENTIFIER GOT expression ~
-    (27) assignation -> . ISIT IDENTIFIER GOT expression ~
-    (28) assignation -> . SCHMECKLE IDENTIFIER GOT expression ~
-    (29) assignation -> . MPFH IDENTIFIER GOT expression ~
-    (30) assignation -> . FAKE IDENTIFIER GOT expression ~
-    (31) assignation -> . IDENTIFIER GOT expression ~
-
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-
-    assignation                    shift and go to state 40
-
-state 22
-
-    (29) assignation -> MPFH IDENTIFIER . GOT expression ~
-
-    GOT             shift and go to state 41
-
-
-state 23
-
-    (27) assignation -> ISIT IDENTIFIER . GOT expression ~
-
-    GOT             shift and go to state 42
-
-
-state 24
-
-    (9) structure -> CANDO PIF . condition PAF WHALE ( condition )
-    (13) condition -> . expression FATTEST expression
-    (14) condition -> . expression FATTER expression
-    (15) condition -> . expression TINIEST expression
-    (16) condition -> . expression TINIER expression
-    (17) condition -> . expression IS expression
-    (18) condition -> . expression ISNOT expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 38
-    condition                      shift and go to state 43
-
-state 25
-
-    (10) structure -> SCHWIFT ( . IDENTIFIER ) PIF cases PAF
-
-    IDENTIFIER      shift and go to state 44
-
-
-state 26
 
     (1) program -> statement ~ .
     (2) program -> statement ~ . program
@@ -395,36 +295,98 @@ state 26
     (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
     (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
 
-    PAF             reduce using rule 1 (program -> statement ~ .)
-    $end            reduce using rule 1 (program -> statement ~ .)
     SHUTUPMORTY     reduce using rule 1 (program -> statement ~ .)
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    $end            reduce using rule 1 (program -> statement ~ .)
+    PAF             reduce using rule 1 (program -> statement ~ .)
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
 
-    program                        shift and go to state 45
-    structure                      shift and go to state 5
-    assignation                    shift and go to state 9
-    statement                      shift and go to state 12
+    structure                      shift and go to state 9
+    statement                      shift and go to state 5
+    program                        shift and go to state 39
+    assignation                    shift and go to state 17
 
-state 27
+state 22
 
-    (25) assignation -> HEY IDENTIFIER . GOT expression ~
+    (8) structure -> WUBBALUBBADUBDUBS ( . assignation ~ condition ~ expression ) PIF program PAF
+    (25) assignation -> . HEY IDENTIFIER GOT expression ~
+    (26) assignation -> . THONG IDENTIFIER GOT expression ~
+    (27) assignation -> . ISIT IDENTIFIER GOT expression ~
+    (28) assignation -> . SCHMECKLE IDENTIFIER GOT expression ~
+    (29) assignation -> . MPFH IDENTIFIER GOT expression ~
+    (30) assignation -> . FAKE IDENTIFIER GOT expression ~
+    (31) assignation -> . IDENTIFIER GOT expression ~
 
-    GOT             shift and go to state 46
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
 
+    assignation                    shift and go to state 40
 
-state 28
+state 23
+
+    (9) structure -> CANDO PIF . condition PAF WHALE ( condition )
+    (13) condition -> . expression FATTEST expression
+    (14) condition -> . expression FATTER expression
+    (15) condition -> . expression TINIEST expression
+    (16) condition -> . expression TINIER expression
+    (17) condition -> . expression IS expression
+    (18) condition -> . expression ISNOT expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    condition                      shift and go to state 42
+    expression                     shift and go to state 41
+
+state 24
+
+    (6) structure -> WHALE ( . condition ) PIF program PAF
+    (13) condition -> . expression FATTEST expression
+    (14) condition -> . expression FATTER expression
+    (15) condition -> . expression TINIEST expression
+    (16) condition -> . expression TINIER expression
+    (17) condition -> . expression IS expression
+    (18) condition -> . expression ISNOT expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    condition                      shift and go to state 43
+    expression                     shift and go to state 41
+
+state 25
 
     (31) assignation -> IDENTIFIER GOT . expression ~
     (19) expression -> . expression ADD_OP expression
@@ -434,68 +396,27 @@ state 28
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
-    expression                     shift and go to state 47
+    expression                     shift and go to state 44
 
-state 29
+state 26
 
-    (30) assignation -> FAKE IDENTIFIER . GOT expression ~
+    (26) assignation -> THONG IDENTIFIER . GOT expression ~
 
-    GOT             shift and go to state 48
-
-
-state 30
-
-    (28) assignation -> SCHMECKLE IDENTIFIER . GOT expression ~
-
-    GOT             shift and go to state 49
+    GOT             shift and go to state 45
 
 
-state 31
-
-    (23) expression -> ( . expression )
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 50
-
-state 32
-
-    (24) expression -> ADD_OP . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 51
-
-state 33
+state 27
 
     (22) expression -> IDENTIFIER .
 
+    ~               reduce using rule 22 (expression -> IDENTIFIER .)
     ADD_OP          reduce using rule 22 (expression -> IDENTIFIER .)
     MUL_OP          reduce using rule 22 (expression -> IDENTIFIER .)
-    ~               reduce using rule 22 (expression -> IDENTIFIER .)
     FATTEST         reduce using rule 22 (expression -> IDENTIFIER .)
     FATTER          reduce using rule 22 (expression -> IDENTIFIER .)
     TINIEST         reduce using rule 22 (expression -> IDENTIFIER .)
@@ -507,24 +428,13 @@ state 33
     :               reduce using rule 22 (expression -> IDENTIFIER .)
 
 
-state 34
-
-    (5) statement -> SHOWMEWHATYOUGOT expression .
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    ~               reduce using rule 5 (statement -> SHOWMEWHATYOUGOT expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 35
+state 28
 
     (21) expression -> NUMBER .
 
+    ~               reduce using rule 21 (expression -> NUMBER .)
     ADD_OP          reduce using rule 21 (expression -> NUMBER .)
     MUL_OP          reduce using rule 21 (expression -> NUMBER .)
-    ~               reduce using rule 21 (expression -> NUMBER .)
     FATTEST         reduce using rule 21 (expression -> NUMBER .)
     FATTER          reduce using rule 21 (expression -> NUMBER .)
     TINIEST         reduce using rule 21 (expression -> NUMBER .)
@@ -536,9 +446,9 @@ state 35
     :               reduce using rule 21 (expression -> NUMBER .)
 
 
-state 36
+state 29
 
-    (26) assignation -> THONG IDENTIFIER GOT . expression ~
+    (23) expression -> ( . expression )
     (19) expression -> . expression ADD_OP expression
     (20) expression -> . expression MUL_OP expression
     (21) expression -> . NUMBER
@@ -546,21 +456,144 @@ state 36
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 46
+
+state 30
+
+    (24) expression -> ADD_OP . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 47
+
+state 31
+
+    (5) statement -> SHOWMEWHATYOUGOT expression .
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    ~               reduce using rule 5 (statement -> SHOWMEWHATYOUGOT expression .)
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 32
+
+    (28) assignation -> SCHMECKLE IDENTIFIER . GOT expression ~
+
+    GOT             shift and go to state 50
+
+
+state 33
+
+    (7) structure -> JEEZ ( . condition ) PIF program PAF
+    (13) condition -> . expression FATTEST expression
+    (14) condition -> . expression FATTER expression
+    (15) condition -> . expression TINIEST expression
+    (16) condition -> . expression TINIER expression
+    (17) condition -> . expression IS expression
+    (18) condition -> . expression ISNOT expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    condition                      shift and go to state 51
+    expression                     shift and go to state 41
+
+state 34
+
+    (27) assignation -> ISIT IDENTIFIER . GOT expression ~
+
+    GOT             shift and go to state 52
+
+
+state 35
+
+    (29) assignation -> MPFH IDENTIFIER . GOT expression ~
+
+    GOT             shift and go to state 53
+
+
+state 36
+
+    (25) assignation -> HEY IDENTIFIER GOT . expression ~
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
     expression                     shift and go to state 54
 
 state 37
 
-    (7) structure -> JEEZ ( condition . ) PIF program PAF
+    (10) structure -> SCHWIFT ( IDENTIFIER . ) PIF cases PAF
 
     )               shift and go to state 55
 
 
 state 38
+
+    (30) assignation -> FAKE IDENTIFIER GOT . expression ~
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 56
+
+state 39
+
+    (2) program -> statement ~ program .
+
+    SHUTUPMORTY     reduce using rule 2 (program -> statement ~ program .)
+    $end            reduce using rule 2 (program -> statement ~ program .)
+    PAF             reduce using rule 2 (program -> statement ~ program .)
+
+
+state 40
+
+    (8) structure -> WUBBALUBBADUBDUBS ( assignation . ~ condition ~ expression ) PIF program PAF
+
+    ~               shift and go to state 57
+
+
+state 41
 
     (13) condition -> expression . FATTEST expression
     (14) condition -> expression . FATTER expression
@@ -571,118 +604,44 @@ state 38
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    FATTEST         shift and go to state 61
-    FATTER          shift and go to state 58
-    TINIEST         shift and go to state 60
-    TINIER          shift and go to state 59
-    IS              shift and go to state 57
-    ISNOT           shift and go to state 56
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    FATTEST         shift and go to state 59
+    FATTER          shift and go to state 61
+    TINIEST         shift and go to state 63
+    TINIER          shift and go to state 60
+    IS              shift and go to state 62
+    ISNOT           shift and go to state 58
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
-
-state 39
-
-    (6) structure -> WHALE ( condition . ) PIF program PAF
-
-    )               shift and go to state 62
-
-
-state 40
-
-    (8) structure -> WUBBALUBBADUBDUBS ( assignation . ~ condition ~ expression ) PIF program PAF
-
-    ~               shift and go to state 63
-
-
-state 41
-
-    (29) assignation -> MPFH IDENTIFIER GOT . expression ~
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 64
 
 state 42
 
-    (27) assignation -> ISIT IDENTIFIER GOT . expression ~
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
+    (9) structure -> CANDO PIF condition . PAF WHALE ( condition )
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    PAF             shift and go to state 64
 
-    expression                     shift and go to state 65
 
 state 43
 
-    (9) structure -> CANDO PIF condition . PAF WHALE ( condition )
+    (6) structure -> WHALE ( condition . ) PIF program PAF
 
-    PAF             shift and go to state 66
+    )               shift and go to state 65
 
 
 state 44
-
-    (10) structure -> SCHWIFT ( IDENTIFIER . ) PIF cases PAF
-
-    )               shift and go to state 67
-
-
-state 45
-
-    (2) program -> statement ~ program .
-
-    PAF             reduce using rule 2 (program -> statement ~ program .)
-    $end            reduce using rule 2 (program -> statement ~ program .)
-    SHUTUPMORTY     reduce using rule 2 (program -> statement ~ program .)
-
-
-state 46
-
-    (25) assignation -> HEY IDENTIFIER GOT . expression ~
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 68
-
-state 47
 
     (31) assignation -> IDENTIFIER GOT expression . ~
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    ~               shift and go to state 69
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    ~               shift and go to state 66
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
-state 48
+state 45
 
-    (30) assignation -> FAKE IDENTIFIER GOT . expression ~
+    (26) assignation -> THONG IDENTIFIER GOT . expression ~
     (19) expression -> . expression ADD_OP expression
     (20) expression -> . expression MUL_OP expression
     (21) expression -> . NUMBER
@@ -690,50 +649,33 @@ state 48
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
-    expression                     shift and go to state 70
+    expression                     shift and go to state 67
 
-state 49
-
-    (28) assignation -> SCHMECKLE IDENTIFIER GOT . expression ~
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 71
-
-state 50
+state 46
 
     (23) expression -> ( expression . )
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    )               shift and go to state 72
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    )               shift and go to state 68
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
-state 51
+state 47
 
     (24) expression -> ADD_OP expression .
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
+    ~               reduce using rule 24 (expression -> ADD_OP expression .)
     ADD_OP          reduce using rule 24 (expression -> ADD_OP expression .)
     MUL_OP          reduce using rule 24 (expression -> ADD_OP expression .)
-    ~               reduce using rule 24 (expression -> ADD_OP expression .)
     FATTEST         reduce using rule 24 (expression -> ADD_OP expression .)
     FATTER          reduce using rule 24 (expression -> ADD_OP expression .)
     TINIEST         reduce using rule 24 (expression -> ADD_OP expression .)
@@ -744,28 +686,11 @@ state 51
     PAF             reduce using rule 24 (expression -> ADD_OP expression .)
     :               reduce using rule 24 (expression -> ADD_OP expression .)
 
-  ! ADD_OP          [ shift and go to state 52 ]
-  ! MUL_OP          [ shift and go to state 53 ]
+  ! ADD_OP          [ shift and go to state 49 ]
+  ! MUL_OP          [ shift and go to state 48 ]
 
 
-state 52
-
-    (19) expression -> expression ADD_OP . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 73
-
-state 53
+state 48
 
     (20) expression -> expression MUL_OP . expression
     (19) expression -> . expression ADD_OP expression
@@ -775,141 +700,118 @@ state 53
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 69
+
+state 49
+
+    (19) expression -> expression ADD_OP . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 70
+
+state 50
+
+    (28) assignation -> SCHMECKLE IDENTIFIER GOT . expression ~
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 71
+
+state 51
+
+    (7) structure -> JEEZ ( condition . ) PIF program PAF
+
+    )               shift and go to state 72
+
+
+state 52
+
+    (27) assignation -> ISIT IDENTIFIER GOT . expression ~
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 73
+
+state 53
+
+    (29) assignation -> MPFH IDENTIFIER GOT . expression ~
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
     expression                     shift and go to state 74
 
 state 54
 
-    (26) assignation -> THONG IDENTIFIER GOT expression . ~
+    (25) assignation -> HEY IDENTIFIER GOT expression . ~
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
     ~               shift and go to state 75
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
 state 55
 
-    (7) structure -> JEEZ ( condition ) . PIF program PAF
+    (10) structure -> SCHWIFT ( IDENTIFIER ) . PIF cases PAF
 
     PIF             shift and go to state 76
 
 
 state 56
 
-    (18) condition -> expression ISNOT . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
+    (30) assignation -> FAKE IDENTIFIER GOT expression . ~
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    ~               shift and go to state 77
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
-    expression                     shift and go to state 77
 
 state 57
-
-    (17) condition -> expression IS . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 78
-
-state 58
-
-    (14) condition -> expression FATTER . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 79
-
-state 59
-
-    (16) condition -> expression TINIER . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 80
-
-state 60
-
-    (15) condition -> expression TINIEST . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 81
-
-state 61
-
-    (13) condition -> expression FATTEST . expression
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
-
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
-
-    expression                     shift and go to state 82
-
-state 62
-
-    (6) structure -> WHALE ( condition ) . PIF program PAF
-
-    PIF             shift and go to state 83
-
-
-state 63
 
     (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ . condition ~ expression ) PIF program PAF
     (13) condition -> . expression FATTEST expression
@@ -925,97 +827,155 @@ state 63
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
-    expression                     shift and go to state 38
-    condition                      shift and go to state 84
+    condition                      shift and go to state 78
+    expression                     shift and go to state 41
+
+state 58
+
+    (18) condition -> expression ISNOT . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 79
+
+state 59
+
+    (13) condition -> expression FATTEST . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 80
+
+state 60
+
+    (16) condition -> expression TINIER . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 81
+
+state 61
+
+    (14) condition -> expression FATTER . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 82
+
+state 62
+
+    (17) condition -> expression IS . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 83
+
+state 63
+
+    (15) condition -> expression TINIEST . expression
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
+
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
+
+    expression                     shift and go to state 84
 
 state 64
 
-    (29) assignation -> MPFH IDENTIFIER GOT expression . ~
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
+    (9) structure -> CANDO PIF condition PAF . WHALE ( condition )
 
-    ~               shift and go to state 85
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    WHALE           shift and go to state 85
 
 
 state 65
 
-    (27) assignation -> ISIT IDENTIFIER GOT expression . ~
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
+    (6) structure -> WHALE ( condition ) . PIF program PAF
 
-    ~               shift and go to state 86
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    PIF             shift and go to state 86
 
 
 state 66
-
-    (9) structure -> CANDO PIF condition PAF . WHALE ( condition )
-
-    WHALE           shift and go to state 87
-
-
-state 67
-
-    (10) structure -> SCHWIFT ( IDENTIFIER ) . PIF cases PAF
-
-    PIF             shift and go to state 88
-
-
-state 68
-
-    (25) assignation -> HEY IDENTIFIER GOT expression . ~
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    ~               shift and go to state 89
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 69
 
     (31) assignation -> IDENTIFIER GOT expression ~ .
 
     ~               reduce using rule 31 (assignation -> IDENTIFIER GOT expression ~ .)
 
 
-state 70
+state 67
 
-    (30) assignation -> FAKE IDENTIFIER GOT expression . ~
+    (26) assignation -> THONG IDENTIFIER GOT expression . ~
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    ~               shift and go to state 90
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    ~               shift and go to state 87
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
-state 71
-
-    (28) assignation -> SCHMECKLE IDENTIFIER GOT expression . ~
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    ~               shift and go to state 91
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 72
+state 68
 
     (23) expression -> ( expression ) .
 
+    ~               reduce using rule 23 (expression -> ( expression ) .)
     ADD_OP          reduce using rule 23 (expression -> ( expression ) .)
     MUL_OP          reduce using rule 23 (expression -> ( expression ) .)
-    ~               reduce using rule 23 (expression -> ( expression ) .)
     FATTEST         reduce using rule 23 (expression -> ( expression ) .)
     FATTER          reduce using rule 23 (expression -> ( expression ) .)
     TINIEST         reduce using rule 23 (expression -> ( expression ) .)
@@ -1027,38 +987,15 @@ state 72
     :               reduce using rule 23 (expression -> ( expression ) .)
 
 
-state 73
-
-    (19) expression -> expression ADD_OP expression .
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    ADD_OP          reduce using rule 19 (expression -> expression ADD_OP expression .)
-    ~               reduce using rule 19 (expression -> expression ADD_OP expression .)
-    FATTEST         reduce using rule 19 (expression -> expression ADD_OP expression .)
-    FATTER          reduce using rule 19 (expression -> expression ADD_OP expression .)
-    TINIEST         reduce using rule 19 (expression -> expression ADD_OP expression .)
-    TINIER          reduce using rule 19 (expression -> expression ADD_OP expression .)
-    IS              reduce using rule 19 (expression -> expression ADD_OP expression .)
-    ISNOT           reduce using rule 19 (expression -> expression ADD_OP expression .)
-    )               reduce using rule 19 (expression -> expression ADD_OP expression .)
-    PAF             reduce using rule 19 (expression -> expression ADD_OP expression .)
-    :               reduce using rule 19 (expression -> expression ADD_OP expression .)
-    MUL_OP          shift and go to state 53
-
-  ! MUL_OP          [ reduce using rule 19 (expression -> expression ADD_OP expression .) ]
-  ! ADD_OP          [ shift and go to state 52 ]
-
-
-state 74
+state 69
 
     (20) expression -> expression MUL_OP expression .
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
+    ~               reduce using rule 20 (expression -> expression MUL_OP expression .)
     ADD_OP          reduce using rule 20 (expression -> expression MUL_OP expression .)
     MUL_OP          reduce using rule 20 (expression -> expression MUL_OP expression .)
-    ~               reduce using rule 20 (expression -> expression MUL_OP expression .)
     FATTEST         reduce using rule 20 (expression -> expression MUL_OP expression .)
     FATTER          reduce using rule 20 (expression -> expression MUL_OP expression .)
     TINIEST         reduce using rule 20 (expression -> expression MUL_OP expression .)
@@ -1069,136 +1006,191 @@ state 74
     PAF             reduce using rule 20 (expression -> expression MUL_OP expression .)
     :               reduce using rule 20 (expression -> expression MUL_OP expression .)
 
-  ! ADD_OP          [ shift and go to state 52 ]
-  ! MUL_OP          [ shift and go to state 53 ]
+  ! ADD_OP          [ shift and go to state 49 ]
+  ! MUL_OP          [ shift and go to state 48 ]
+
+
+state 70
+
+    (19) expression -> expression ADD_OP expression .
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    ~               reduce using rule 19 (expression -> expression ADD_OP expression .)
+    ADD_OP          reduce using rule 19 (expression -> expression ADD_OP expression .)
+    FATTEST         reduce using rule 19 (expression -> expression ADD_OP expression .)
+    FATTER          reduce using rule 19 (expression -> expression ADD_OP expression .)
+    TINIEST         reduce using rule 19 (expression -> expression ADD_OP expression .)
+    TINIER          reduce using rule 19 (expression -> expression ADD_OP expression .)
+    IS              reduce using rule 19 (expression -> expression ADD_OP expression .)
+    ISNOT           reduce using rule 19 (expression -> expression ADD_OP expression .)
+    )               reduce using rule 19 (expression -> expression ADD_OP expression .)
+    PAF             reduce using rule 19 (expression -> expression ADD_OP expression .)
+    :               reduce using rule 19 (expression -> expression ADD_OP expression .)
+    MUL_OP          shift and go to state 48
+
+  ! MUL_OP          [ reduce using rule 19 (expression -> expression ADD_OP expression .) ]
+  ! ADD_OP          [ shift and go to state 49 ]
+
+
+state 71
+
+    (28) assignation -> SCHMECKLE IDENTIFIER GOT expression . ~
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    ~               shift and go to state 88
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 72
+
+    (7) structure -> JEEZ ( condition ) . PIF program PAF
+
+    PIF             shift and go to state 89
+
+
+state 73
+
+    (27) assignation -> ISIT IDENTIFIER GOT expression . ~
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    ~               shift and go to state 90
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 74
+
+    (29) assignation -> MPFH IDENTIFIER GOT expression . ~
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    ~               shift and go to state 91
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
 state 75
 
-    (26) assignation -> THONG IDENTIFIER GOT expression ~ .
+    (25) assignation -> HEY IDENTIFIER GOT expression ~ .
 
-    ~               reduce using rule 26 (assignation -> THONG IDENTIFIER GOT expression ~ .)
+    ~               reduce using rule 25 (assignation -> HEY IDENTIFIER GOT expression ~ .)
 
 
 state 76
 
-    (7) structure -> JEEZ ( condition ) PIF . program PAF
-    (1) program -> . statement ~
-    (2) program -> . statement ~ program
-    (3) statement -> . assignation
-    (4) statement -> . structure
-    (5) statement -> . SHOWMEWHATYOUGOT expression
-    (25) assignation -> . HEY IDENTIFIER GOT expression ~
-    (26) assignation -> . THONG IDENTIFIER GOT expression ~
-    (27) assignation -> . ISIT IDENTIFIER GOT expression ~
-    (28) assignation -> . SCHMECKLE IDENTIFIER GOT expression ~
-    (29) assignation -> . MPFH IDENTIFIER GOT expression ~
-    (30) assignation -> . FAKE IDENTIFIER GOT expression ~
-    (31) assignation -> . IDENTIFIER GOT expression ~
-    (6) structure -> . WHALE ( condition ) PIF program PAF
-    (7) structure -> . JEEZ ( condition ) PIF program PAF
-    (8) structure -> . WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF
-    (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
-    (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
+    (10) structure -> SCHWIFT ( IDENTIFIER ) PIF . cases PAF
+    (11) cases -> . DEFAULT : program SHUTUPMORTY ~
+    (12) cases -> . HEYRICK expression : program SHUTUPMORTY ~ cases
 
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    DEFAULT         shift and go to state 94
+    HEYRICK         shift and go to state 92
 
-    program                        shift and go to state 92
-    structure                      shift and go to state 5
-    assignation                    shift and go to state 9
-    statement                      shift and go to state 12
+    cases                          shift and go to state 93
 
 state 77
+
+    (30) assignation -> FAKE IDENTIFIER GOT expression ~ .
+
+    ~               reduce using rule 30 (assignation -> FAKE IDENTIFIER GOT expression ~ .)
+
+
+state 78
+
+    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition . ~ expression ) PIF program PAF
+
+    ~               shift and go to state 95
+
+
+state 79
 
     (18) condition -> expression ISNOT expression .
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    PAF             reduce using rule 18 (condition -> expression ISNOT expression .)
     )               reduce using rule 18 (condition -> expression ISNOT expression .)
+    PAF             reduce using rule 18 (condition -> expression ISNOT expression .)
     ~               reduce using rule 18 (condition -> expression ISNOT expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 78
-
-    (17) condition -> expression IS expression .
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    PAF             reduce using rule 17 (condition -> expression IS expression .)
-    )               reduce using rule 17 (condition -> expression IS expression .)
-    ~               reduce using rule 17 (condition -> expression IS expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 79
-
-    (14) condition -> expression FATTER expression .
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    PAF             reduce using rule 14 (condition -> expression FATTER expression .)
-    )               reduce using rule 14 (condition -> expression FATTER expression .)
-    ~               reduce using rule 14 (condition -> expression FATTER expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
 state 80
-
-    (16) condition -> expression TINIER expression .
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    PAF             reduce using rule 16 (condition -> expression TINIER expression .)
-    )               reduce using rule 16 (condition -> expression TINIER expression .)
-    ~               reduce using rule 16 (condition -> expression TINIER expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 81
-
-    (15) condition -> expression TINIEST expression .
-    (19) expression -> expression . ADD_OP expression
-    (20) expression -> expression . MUL_OP expression
-
-    PAF             reduce using rule 15 (condition -> expression TINIEST expression .)
-    )               reduce using rule 15 (condition -> expression TINIEST expression .)
-    ~               reduce using rule 15 (condition -> expression TINIEST expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
-
-
-state 82
 
     (13) condition -> expression FATTEST expression .
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    PAF             reduce using rule 13 (condition -> expression FATTEST expression .)
     )               reduce using rule 13 (condition -> expression FATTEST expression .)
+    PAF             reduce using rule 13 (condition -> expression FATTEST expression .)
     ~               reduce using rule 13 (condition -> expression FATTEST expression .)
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 81
+
+    (16) condition -> expression TINIER expression .
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    )               reduce using rule 16 (condition -> expression TINIER expression .)
+    PAF             reduce using rule 16 (condition -> expression TINIER expression .)
+    ~               reduce using rule 16 (condition -> expression TINIER expression .)
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 82
+
+    (14) condition -> expression FATTER expression .
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    )               reduce using rule 14 (condition -> expression FATTER expression .)
+    PAF             reduce using rule 14 (condition -> expression FATTER expression .)
+    ~               reduce using rule 14 (condition -> expression FATTER expression .)
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
 state 83
+
+    (17) condition -> expression IS expression .
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    )               reduce using rule 17 (condition -> expression IS expression .)
+    PAF             reduce using rule 17 (condition -> expression IS expression .)
+    ~               reduce using rule 17 (condition -> expression IS expression .)
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 84
+
+    (15) condition -> expression TINIEST expression .
+    (19) expression -> expression . ADD_OP expression
+    (20) expression -> expression . MUL_OP expression
+
+    )               reduce using rule 15 (condition -> expression TINIEST expression .)
+    PAF             reduce using rule 15 (condition -> expression TINIEST expression .)
+    ~               reduce using rule 15 (condition -> expression TINIEST expression .)
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 85
+
+    (9) structure -> CANDO PIF condition PAF WHALE . ( condition )
+
+    (               shift and go to state 96
+
+
+state 86
 
     (6) structure -> WHALE ( condition ) PIF . program PAF
     (1) program -> . statement ~
@@ -1219,100 +1211,125 @@ state 83
     (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
     (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
 
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
 
-    program                        shift and go to state 93
-    structure                      shift and go to state 5
-    assignation                    shift and go to state 9
-    statement                      shift and go to state 12
-
-state 84
-
-    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition . ~ expression ) PIF program PAF
-
-    ~               shift and go to state 94
-
-
-state 85
-
-    (29) assignation -> MPFH IDENTIFIER GOT expression ~ .
-
-    ~               reduce using rule 29 (assignation -> MPFH IDENTIFIER GOT expression ~ .)
-
-
-state 86
-
-    (27) assignation -> ISIT IDENTIFIER GOT expression ~ .
-
-    ~               reduce using rule 27 (assignation -> ISIT IDENTIFIER GOT expression ~ .)
-
+    statement                      shift and go to state 5
+    program                        shift and go to state 97
+    structure                      shift and go to state 9
+    assignation                    shift and go to state 17
 
 state 87
 
-    (9) structure -> CANDO PIF condition PAF WHALE . ( condition )
+    (26) assignation -> THONG IDENTIFIER GOT expression ~ .
 
-    (               shift and go to state 95
+    ~               reduce using rule 26 (assignation -> THONG IDENTIFIER GOT expression ~ .)
 
 
 state 88
-
-    (10) structure -> SCHWIFT ( IDENTIFIER ) PIF . cases PAF
-    (11) cases -> . DEFAULT : program SHUTUPMORTY ~
-    (12) cases -> . HEYRICK expression : program SHUTUPMORTY ~ cases
-
-    DEFAULT         shift and go to state 97
-    HEYRICK         shift and go to state 98
-
-    cases                          shift and go to state 96
-
-state 89
-
-    (25) assignation -> HEY IDENTIFIER GOT expression ~ .
-
-    ~               reduce using rule 25 (assignation -> HEY IDENTIFIER GOT expression ~ .)
-
-
-state 90
-
-    (30) assignation -> FAKE IDENTIFIER GOT expression ~ .
-
-    ~               reduce using rule 30 (assignation -> FAKE IDENTIFIER GOT expression ~ .)
-
-
-state 91
 
     (28) assignation -> SCHMECKLE IDENTIFIER GOT expression ~ .
 
     ~               reduce using rule 28 (assignation -> SCHMECKLE IDENTIFIER GOT expression ~ .)
 
 
+state 89
+
+    (7) structure -> JEEZ ( condition ) PIF . program PAF
+    (1) program -> . statement ~
+    (2) program -> . statement ~ program
+    (3) statement -> . assignation
+    (4) statement -> . structure
+    (5) statement -> . SHOWMEWHATYOUGOT expression
+    (25) assignation -> . HEY IDENTIFIER GOT expression ~
+    (26) assignation -> . THONG IDENTIFIER GOT expression ~
+    (27) assignation -> . ISIT IDENTIFIER GOT expression ~
+    (28) assignation -> . SCHMECKLE IDENTIFIER GOT expression ~
+    (29) assignation -> . MPFH IDENTIFIER GOT expression ~
+    (30) assignation -> . FAKE IDENTIFIER GOT expression ~
+    (31) assignation -> . IDENTIFIER GOT expression ~
+    (6) structure -> . WHALE ( condition ) PIF program PAF
+    (7) structure -> . JEEZ ( condition ) PIF program PAF
+    (8) structure -> . WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF
+    (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
+    (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
+
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
+
+    statement                      shift and go to state 5
+    program                        shift and go to state 98
+    structure                      shift and go to state 9
+    assignation                    shift and go to state 17
+
+state 90
+
+    (27) assignation -> ISIT IDENTIFIER GOT expression ~ .
+
+    ~               reduce using rule 27 (assignation -> ISIT IDENTIFIER GOT expression ~ .)
+
+
+state 91
+
+    (29) assignation -> MPFH IDENTIFIER GOT expression ~ .
+
+    ~               reduce using rule 29 (assignation -> MPFH IDENTIFIER GOT expression ~ .)
+
+
 state 92
 
-    (7) structure -> JEEZ ( condition ) PIF program . PAF
+    (12) cases -> HEYRICK . expression : program SHUTUPMORTY ~ cases
+    (19) expression -> . expression ADD_OP expression
+    (20) expression -> . expression MUL_OP expression
+    (21) expression -> . NUMBER
+    (22) expression -> . IDENTIFIER
+    (23) expression -> . ( expression )
+    (24) expression -> . ADD_OP expression
 
-    PAF             shift and go to state 99
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
+    expression                     shift and go to state 99
 
 state 93
 
-    (6) structure -> WHALE ( condition ) PIF program . PAF
+    (10) structure -> SCHWIFT ( IDENTIFIER ) PIF cases . PAF
 
     PAF             shift and go to state 100
 
 
 state 94
+
+    (11) cases -> DEFAULT . : program SHUTUPMORTY ~
+
+    :               shift and go to state 101
+
+
+state 95
 
     (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ . expression ) PIF program PAF
     (19) expression -> . expression ADD_OP expression
@@ -1322,14 +1339,14 @@ state 94
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
-    expression                     shift and go to state 101
+    expression                     shift and go to state 102
 
-state 95
+state 96
 
     (9) structure -> CANDO PIF condition PAF WHALE ( . condition )
     (13) condition -> . expression FATTEST expression
@@ -1345,85 +1362,47 @@ state 95
     (23) expression -> . ( expression )
     (24) expression -> . ADD_OP expression
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    NUMBER          shift and go to state 28
+    IDENTIFIER      shift and go to state 27
+    (               shift and go to state 29
+    ADD_OP          shift and go to state 30
 
-    expression                     shift and go to state 38
-    condition                      shift and go to state 102
-
-state 96
-
-    (10) structure -> SCHWIFT ( IDENTIFIER ) PIF cases . PAF
-
-    PAF             shift and go to state 103
-
+    condition                      shift and go to state 103
+    expression                     shift and go to state 41
 
 state 97
 
-    (11) cases -> DEFAULT . : program SHUTUPMORTY ~
+    (6) structure -> WHALE ( condition ) PIF program . PAF
 
-    :               shift and go to state 104
+    PAF             shift and go to state 104
 
 
 state 98
 
-    (12) cases -> HEYRICK . expression : program SHUTUPMORTY ~ cases
-    (19) expression -> . expression ADD_OP expression
-    (20) expression -> . expression MUL_OP expression
-    (21) expression -> . NUMBER
-    (22) expression -> . IDENTIFIER
-    (23) expression -> . ( expression )
-    (24) expression -> . ADD_OP expression
+    (7) structure -> JEEZ ( condition ) PIF program . PAF
 
-    NUMBER          shift and go to state 35
-    IDENTIFIER      shift and go to state 33
-    (               shift and go to state 31
-    ADD_OP          shift and go to state 32
+    PAF             shift and go to state 105
 
-    expression                     shift and go to state 105
 
 state 99
 
-    (7) structure -> JEEZ ( condition ) PIF program PAF .
-
-    ~               reduce using rule 7 (structure -> JEEZ ( condition ) PIF program PAF .)
-
-
-state 100
-
-    (6) structure -> WHALE ( condition ) PIF program PAF .
-
-    ~               reduce using rule 6 (structure -> WHALE ( condition ) PIF program PAF .)
-
-
-state 101
-
-    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression . ) PIF program PAF
+    (12) cases -> HEYRICK expression . : program SHUTUPMORTY ~ cases
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    )               shift and go to state 106
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    :               shift and go to state 106
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
 
 
-state 102
-
-    (9) structure -> CANDO PIF condition PAF WHALE ( condition . )
-
-    )               shift and go to state 107
-
-
-state 103
+state 100
 
     (10) structure -> SCHWIFT ( IDENTIFIER ) PIF cases PAF .
 
     ~               reduce using rule 10 (structure -> SCHWIFT ( IDENTIFIER ) PIF cases PAF .)
 
 
-state 104
+state 101
 
     (11) cases -> DEFAULT : . program SHUTUPMORTY ~
     (1) program -> . statement ~
@@ -1444,58 +1423,58 @@ state 104
     (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
     (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
 
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
 
-    program                        shift and go to state 108
-    structure                      shift and go to state 5
-    assignation                    shift and go to state 9
-    statement                      shift and go to state 12
+    structure                      shift and go to state 9
+    statement                      shift and go to state 5
+    program                        shift and go to state 107
+    assignation                    shift and go to state 17
 
-state 105
+state 102
 
-    (12) cases -> HEYRICK expression . : program SHUTUPMORTY ~ cases
+    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression . ) PIF program PAF
     (19) expression -> expression . ADD_OP expression
     (20) expression -> expression . MUL_OP expression
 
-    :               shift and go to state 109
-    ADD_OP          shift and go to state 52
-    MUL_OP          shift and go to state 53
+    )               shift and go to state 108
+    ADD_OP          shift and go to state 49
+    MUL_OP          shift and go to state 48
+
+
+state 103
+
+    (9) structure -> CANDO PIF condition PAF WHALE ( condition . )
+
+    )               shift and go to state 109
+
+
+state 104
+
+    (6) structure -> WHALE ( condition ) PIF program PAF .
+
+    ~               reduce using rule 6 (structure -> WHALE ( condition ) PIF program PAF .)
+
+
+state 105
+
+    (7) structure -> JEEZ ( condition ) PIF program PAF .
+
+    ~               reduce using rule 7 (structure -> JEEZ ( condition ) PIF program PAF .)
 
 
 state 106
-
-    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) . PIF program PAF
-
-    PIF             shift and go to state 110
-
-
-state 107
-
-    (9) structure -> CANDO PIF condition PAF WHALE ( condition ) .
-
-    ~               reduce using rule 9 (structure -> CANDO PIF condition PAF WHALE ( condition ) .)
-
-
-state 108
-
-    (11) cases -> DEFAULT : program . SHUTUPMORTY ~
-
-    SHUTUPMORTY     shift and go to state 111
-
-
-state 109
 
     (12) cases -> HEYRICK expression : . program SHUTUPMORTY ~ cases
     (1) program -> . statement ~
@@ -1516,26 +1495,61 @@ state 109
     (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
     (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
 
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
 
-    structure                      shift and go to state 5
-    program                        shift and go to state 112
-    assignation                    shift and go to state 9
-    statement                      shift and go to state 12
+    structure                      shift and go to state 9
+    statement                      shift and go to state 5
+    program                        shift and go to state 110
+    assignation                    shift and go to state 17
+
+state 107
+
+    (11) cases -> DEFAULT : program . SHUTUPMORTY ~
+
+    SHUTUPMORTY     shift and go to state 111
+
+
+state 108
+
+    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) . PIF program PAF
+
+    PIF             shift and go to state 112
+
+
+state 109
+
+    (9) structure -> CANDO PIF condition PAF WHALE ( condition ) .
+
+    ~               reduce using rule 9 (structure -> CANDO PIF condition PAF WHALE ( condition ) .)
+
 
 state 110
+
+    (12) cases -> HEYRICK expression : program . SHUTUPMORTY ~ cases
+
+    SHUTUPMORTY     shift and go to state 113
+
+
+state 111
+
+    (11) cases -> DEFAULT : program SHUTUPMORTY . ~
+
+    ~               shift and go to state 114
+
+
+state 112
 
     (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF . program PAF
     (1) program -> . statement ~
@@ -1556,44 +1570,30 @@ state 110
     (9) structure -> . CANDO PIF condition PAF WHALE ( condition )
     (10) structure -> . SCHWIFT ( IDENTIFIER ) PIF cases PAF
 
-    SHOWMEWHATYOUGOT shift and go to state 17
-    HEY             shift and go to state 13
-    THONG           shift and go to state 1
-    ISIT            shift and go to state 7
-    SCHMECKLE       shift and go to state 16
-    MPFH            shift and go to state 6
-    FAKE            shift and go to state 15
-    IDENTIFIER      shift and go to state 14
-    WHALE           shift and go to state 3
-    JEEZ            shift and go to state 2
-    WUBBALUBBADUBDUBS shift and go to state 4
-    CANDO           shift and go to state 10
-    SCHWIFT         shift and go to state 11
+    SHOWMEWHATYOUGOT shift and go to state 12
+    HEY             shift and go to state 1
+    THONG           shift and go to state 11
+    ISIT            shift and go to state 15
+    SCHMECKLE       shift and go to state 13
+    MPFH            shift and go to state 16
+    FAKE            shift and go to state 4
+    IDENTIFIER      shift and go to state 10
+    WHALE           shift and go to state 8
+    JEEZ            shift and go to state 14
+    WUBBALUBBADUBDUBS shift and go to state 6
+    CANDO           shift and go to state 7
+    SCHWIFT         shift and go to state 2
 
-    structure                      shift and go to state 5
-    program                        shift and go to state 113
-    statement                      shift and go to state 12
-    assignation                    shift and go to state 9
-
-state 111
-
-    (11) cases -> DEFAULT : program SHUTUPMORTY . ~
-
-    ~               shift and go to state 114
-
-
-state 112
-
-    (12) cases -> HEYRICK expression : program . SHUTUPMORTY ~ cases
-
-    SHUTUPMORTY     shift and go to state 115
-
+    structure                      shift and go to state 9
+    statement                      shift and go to state 5
+    program                        shift and go to state 115
+    assignation                    shift and go to state 17
 
 state 113
 
-    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program . PAF
+    (12) cases -> HEYRICK expression : program SHUTUPMORTY . ~ cases
 
-    PAF             shift and go to state 116
+    ~               shift and go to state 116
 
 
 state 114
@@ -1605,28 +1605,28 @@ state 114
 
 state 115
 
-    (12) cases -> HEYRICK expression : program SHUTUPMORTY . ~ cases
+    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program . PAF
 
-    ~               shift and go to state 117
+    PAF             shift and go to state 117
 
 
 state 116
-
-    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF .
-
-    ~               reduce using rule 8 (structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF .)
-
-
-state 117
 
     (12) cases -> HEYRICK expression : program SHUTUPMORTY ~ . cases
     (11) cases -> . DEFAULT : program SHUTUPMORTY ~
     (12) cases -> . HEYRICK expression : program SHUTUPMORTY ~ cases
 
-    DEFAULT         shift and go to state 97
-    HEYRICK         shift and go to state 98
+    DEFAULT         shift and go to state 94
+    HEYRICK         shift and go to state 92
 
     cases                          shift and go to state 118
+
+state 117
+
+    (8) structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF .
+
+    ~               reduce using rule 8 (structure -> WUBBALUBBADUBDUBS ( assignation ~ condition ~ expression ) PIF program PAF .)
+
 
 state 118
 
