@@ -2,12 +2,12 @@
 
 '''
 Petit module utilitaire pour la construction, la manipulation et la
-représentation d'arbres syntaxiques abstraits.
+reprï¿½sentation d'arbres syntaxiques abstraits.
 
-Sûrement plein de bugs et autres surprises. À prendre comme un
+Sï¿½rement plein de bugs et autres surprises. ï¿½ prendre comme un
 "work in progress"...
-Notamment, l'utilisation de pydot pour représenter un arbre syntaxique cousu
-est une utilisation un peu "limite" de graphviz. Ça marche, mais le layout
+Notamment, l'utilisation de pydot pour reprï¿½senter un arbre syntaxique cousu
+est une utilisation un peu "limite" de graphviz. ï¿½a marche, mais le layout
 n'est pas toujours optimal...
 '''
 
@@ -84,10 +84,10 @@ class Node:
             edge.set_color(color)
             edge.set_arrowsize('.5')
 
-            ''' Les arrêtes correspondant aux coutures ne sont pas prises en compte
-            pour le layout du graphe. Ceci permet de garder l'arbre dans sa représentation
+            ''' Les arrï¿½tes correspondant aux coutures ne sont pas prises en compte
+            pour le layout du graphe. Ceci permet de garder l'arbre dans sa reprï¿½sentation
             "standard", mais peut provoquer des surprises pour le trajet parfois un peu
-            tarabiscoté des coutures...
+            tarabiscotï¿½ des coutures...
             En commantant cette ligne, le layout sera bien meilleur, mais l'arbre
             nettement moins reconnaissable. '''
 
@@ -131,8 +131,8 @@ class AssignNode(Node):
     type = '='
 
 
-class WhileNode(Node):
-    type = 'while'
+class WhaleNode(Node):
+    type = 'whale'
 
 
 class PrintNode(Node):
