@@ -19,8 +19,11 @@ reserved_words = {
     'cando',
     'schwift',
     'didit',
-    'PIF',
-    'PAF',
+    'pif',
+    'paf',
+    'showmewhatyougot',
+    'wubbalubbadubdubs',
+    'whale'
 }
 
 tokens = (
