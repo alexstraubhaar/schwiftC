@@ -1,24 +1,17 @@
-Created by PLY version 3.7 (http://www.dabeaz.com/ply)
+Created by PLY version 3.8 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
-    IS
-    MPFH
-    ISIT
-    ADD_OP
     SHUTUPMORTY
-    FATTEST
-    THONG
-    MUL_OP
-    GOT
-    DIDIT
-    HEY
-    SCHWIFT
-    TINIER
-    NUMBER
-    FATTER
-    TINIEST
+    IS
     ISNOT
+    GOT
+    ISIT
+    SCHWIFT
+    DIDIT
+    THONG
+    MPFH
+    HEY
 
 Grammar
 
@@ -32,34 +25,46 @@ Rule 6     structure -> WHILE expression PIF program PAF
 Rule 7     structure -> JEEZ PIF program PAF
 Rule 8     structure -> WUBBALUBBADUBDUBS PIF program PAF
 Rule 9     structure -> CANDO PIF program PAF WHILE expression
-Rule 10    assignation -> IDENTIFIER got expression ~
+Rule 10    condition -> expression FATTEST expression
+Rule 11    condition -> expression FATTER expression
+Rule 12    condition -> expression TINIEST expression
+Rule 13    condition -> expression TINIER expression
+Rule 14    expression -> expression ADD_OP expression
+Rule 15    expression -> expression MUL_OP expression
+Rule 16    expression -> NUMBER
+Rule 17    expression -> IDENTIFIER
+Rule 18    expression -> ( expression )
+Rule 19    expression -> ADD_OP expression
+Rule 20    assignation -> IDENTIFIER got expression ~
 
 Terminals, with rules where they appear
 
-ADD_OP               : 
+(                    : 18
+)                    : 18
+ADD_OP               : 14 19
 CANDO                : 9
 DIDIT                : 
-FATTER               : 
-FATTEST              : 
+FATTER               : 11
+FATTEST              : 10
 GOT                  : 
 HEY                  : 
-IDENTIFIER           : 10
+IDENTIFIER           : 17 20
 IS                   : 
 ISIT                 : 
 ISNOT                : 
 JEEZ                 : 7
 MPFH                 : 
-MUL_OP               : 
-NUMBER               : 
+MUL_OP               : 15
+NUMBER               : 16
 PAF                  : 6 7 8 9
 PIF                  : 6 7 8 9
 SCHWIFT              : 
 SHUTUPMORTY          : 
 THONG                : 
-TINIER               : 
-TINIEST              : 
+TINIER               : 13
+TINIEST              : 12
 error                : 
-~                    : 1 2 10
+~                    : 1 2 20
 
 Nonterminals, with rules where they appear
 
@@ -67,8 +72,9 @@ SHOWMEWHATYOUGOT     : 5
 WHILE                : 6 9
 WUBBALUBBADUBDUBS    : 8
 assignation          : 3
-expression           : 5 6 9 10
-got                  : 10
+condition            : 
+expression           : 5 6 9 10 10 11 11 12 12 13 13 14 14 15 15 18 19 20
+got                  : 20
 program              : 2 6 7 8 9 0
 statement            : 1 2
 structure            : 4

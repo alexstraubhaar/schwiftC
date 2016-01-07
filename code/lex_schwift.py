@@ -3,24 +3,24 @@ import ply.lex as lex
 __authors__ = 'Alex and *BURP* Thomas'
 
 reserved_words = {
-    'got',
-    'tiniest',
-    'tinier',
-    'fattest',
-    'fatter',
-    'is',
-    'isnot',
-    'hey',
-    'thong',
-    'isit',
-    'mpfh',
-    'jeez',
-    'shutupmorty',
-    'cando',
-    'schwift',
-    'didit',
-    'PIF',
-    'PAF',
+    'got',              # =
+    'tiniest',          # <
+    'tinier',           # <=
+    'fattest',          # >
+    'fatter',           # >=
+    'is',               # ==
+    'isnot',            # !=
+    'hey',              # int
+    'thong',            # string
+    'isit',             # bool
+    'mpfh',             # char
+    'jeez',             # if
+    'shutupmorty',      # break
+    'cando',            # do
+    'schwift',          # switch
+    'didit',            # return
+    'PIF',              # {
+    'PAF',              # }
 }
 
 tokens = (
