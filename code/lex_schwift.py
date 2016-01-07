@@ -22,9 +22,10 @@ reserved_words = {
 
     # Structures
     'jeez',  # if
+    'schwift',  # switch
+    'heyrick',  # case
     'shutupmorty',  # break
     'cando',  # do
-    'schwift',  # switch
     'didit',  # return
     'showmewhatyougot',  # print
     'wubbalubbadubdubs',  # for
