@@ -36,6 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
-# Weird directory #
+# Weird directories #
 ###################
 .idea
+code/__pycache__
+code/generated
