@@ -1,1 +1,3 @@
 .idea/
+generated
+__pycache__
