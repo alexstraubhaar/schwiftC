@@ -1,3 +1,4 @@
+# coding latin-1
 import AST
 import ply.yacc as yacc
 from lex_schwift import tokens
@@ -25,7 +26,8 @@ vars = {}
 
 def p_program_statement(p):
     """ program : statement '~'
-     | statement '~' program"""
+    | structure
+    | statement '~' program"""
     try:
         p[0] = AST.ProgramNode([p[1]] + p[3].children)
     except IndexError:
@@ -34,7 +36,6 @@ def p_program_statement(p):
 
 def p_statement(p):
     """statement : assignation
-    | structure
     | SHOWMEWHATYOUGOT expression"""
     try:
         p[0] = AST.PrintNode(p[2])
@@ -134,7 +135,7 @@ precedence = (
 # YACC UTILS #
 def p_error(p):
     print("Syntax error in line %d" % p.lineno)
-    yacc.errok()
+    p.lexer.skip(1)
 
 
 def parse(program):
@@ -148,14 +149,13 @@ if __name__ == '__main__':
 
     prog = open(sys.argv[1]).read()
 
-    print("=========\n" + prog + "\n=========\n")
-
     result = yacc.parse(prog)
     print(result)
+    print("=========\n" + prog + "\n=========\n")
 
     import os
 
-    graph = result.makegraphicaltree()
-    name = os.path.splitext(sys.argv[1])[0] + '-ast.pdf'
-    graph.write_pdf(name)
-    print("wrote ast to", name)
+    # graph = result.makegraphicaltree()
+    # name = os.path.splitext(sys.argv[1])[0] + '-ast.pdf'
+    # graph.write_pdf(name)
+    # print("wrote ast to", name)

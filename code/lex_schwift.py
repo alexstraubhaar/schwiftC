@@ -32,7 +32,7 @@ reserved_words = {
     'whale',  # while
 
     # Methods
-    # 'meeseeks', # def
+    # 'meeseeks', # function
     # 'didit',  # return
 
     # PIF PAF
