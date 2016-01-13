@@ -36,8 +36,8 @@ reserved_words = {
     # 'didit',  # return
 
     # PIF PAF
-    'pif',  # {
-    'paf'  # }
+    'PIF',  # {
+    'PAF'  # }
 }
 
 tokens = (

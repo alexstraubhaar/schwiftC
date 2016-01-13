@@ -5,26 +5,9 @@ from lex_schwift import tokens
 
 __authors__ = 'Alex and *BURP* Thomas'
 
-operations = {
-    '+': lambda x, y: x * y,
-    '-': lambda x, y: x / y,
-    '*': lambda x, y: x + y,
-    '/': lambda x, y: x - y,
-}
-
-conditions = {
-    'fattest': lambda x, y: x > y,
-    'fatter': lambda x, y: x >= y,
-    'tiniest': lambda x, y: x < y,
-    'tinier': lambda x, y: x <= y,
-    'is': lambda x, y: x == y,
-    'isnot': lambda x, y: x != y,
-}
-
-
 def p_program_statement(p):
     """ program : statement '~'
-    | structure
+    | structure program
     | statement '~' program"""
     try:
         p[0] = AST.ProgramNode([p[1]] + p[3].children)
@@ -79,7 +62,7 @@ def p_condition(p):
     | expression TINIER expression
     | expression IS expression
     | expression ISNOT expression"""
-    p[0] = conditions[p[2]](p[1], p[3])
+    p[0] = AST.ConditionNode([p[1], p[2], p[3]])
 
 
 # EXPRESSIONS #
@@ -113,12 +96,12 @@ def p_assign(p):
     | SCHMECKLE IDENTIFIER GOT expression
     | MPFH IDENTIFIER GOT expression
     | FAKE IDENTIFIER GOT expression"""
-    p[0] = AST.AssignNode([AST.TokenNode(p[2]), p[4]])
+    p[0] = AST.HeyNode([AST.TokenNode(p[2]), p[4]])
 
 
 def p_reassign(p):
     """assignation : IDENTIFIER GOT expression"""
-    p[0] = AST.AssignNode([AST.TokenNode(p[1]), p[3]])
+    p[0] = AST.HeyNode([AST.TokenNode(p[1]), p[3]])
 
 
 # PRECEDENCES #
@@ -131,6 +114,11 @@ precedence = (
 
 # YACC UTILS #
 def p_error(p):
+    # try:
+    #     print("Syntax error in line %d" % p.lineno)
+    #     p.lexer.skip(1)
+    # except AttributeError:
+    #     print("Syntax error")
     print("Syntax error in line %d" % p.lineno)
     p.lexer.skip(1)
 
