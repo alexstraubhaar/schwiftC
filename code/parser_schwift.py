@@ -115,6 +115,7 @@ def p_assign(p):
     | MPFH IDENTIFIER GOT expression '~'
     | FAKE IDENTIFIER GOT expression '~'"""
     p[0] = AST.AssignNode([AST.TokenNode(p[2]), p[4]])
+    print
 
 
 def p_reassign(p):
@@ -146,6 +147,9 @@ if __name__ == '__main__':
     import sys
 
     prog = open(sys.argv[1]).read()
+
+    print("=========\n" + prog + "\n=========\n")
+
     result = yacc.parse(prog)
     print(result)
 
