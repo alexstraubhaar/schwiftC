@@ -27,7 +27,7 @@ reserved_words = {
     'shutupmorty',  # break
     'default',
     'cando',  # do
-    'showmewhatyougot',  # print
+    'SHOWMEWHATYOUGOT',  # print
     'wubbalubbadubdubs',  # for
     'whale',  # while
 

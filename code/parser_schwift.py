@@ -13,15 +13,13 @@ operations = {
 }
 
 conditions = {
-    'FATTEST': lambda x, y: x > y,
-    'FATTER': lambda x, y: x >= y,
-    'TINIEST': lambda x, y: x < y,
-    'TINIER': lambda x, y: x <= y,
-    'IS': lambda x, y: x == y,
-    'ISNOT': lambda x, y: x != y,
+    'fattest': lambda x, y: x > y,
+    'fatter': lambda x, y: x >= y,
+    'tiniest': lambda x, y: x < y,
+    'tinier': lambda x, y: x <= y,
+    'is': lambda x, y: x == y,
+    'isnot': lambda x, y: x != y,
 }
-
-vars = {}
 
 
 def p_program_statement(p):
@@ -38,7 +36,7 @@ def p_statement(p):
     """statement : assignation
     | SHOWMEWHATYOUGOT expression"""
     try:
-        p[0] = AST.PrintNode(p[2])
+        p[0] = AST.SHOWMEWHATYOUGOTNode(p[2])
     except IndexError:
         p[0] = p[1]
 
@@ -109,18 +107,17 @@ def p_expression_minus(p):
 
 # ASSIGNATION #
 def p_assign(p):
-    """assignation : HEY IDENTIFIER GOT expression '~'
-    | THONG IDENTIFIER GOT expression '~'
-    | ISIT IDENTIFIER GOT expression '~'
-    | SCHMECKLE IDENTIFIER GOT expression '~'
-    | MPFH IDENTIFIER GOT expression '~'
-    | FAKE IDENTIFIER GOT expression '~'"""
+    """assignation : HEY IDENTIFIER GOT expression
+    | THONG IDENTIFIER GOT expression
+    | ISIT IDENTIFIER GOT expression
+    | SCHMECKLE IDENTIFIER GOT expression
+    | MPFH IDENTIFIER GOT expression
+    | FAKE IDENTIFIER GOT expression"""
     p[0] = AST.AssignNode([AST.TokenNode(p[2]), p[4]])
-    print
 
 
 def p_reassign(p):
-    """assignation : IDENTIFIER GOT expression '~' """
+    """assignation : IDENTIFIER GOT expression"""
     p[0] = AST.AssignNode([AST.TokenNode(p[1]), p[3]])
 
 
@@ -155,7 +152,7 @@ if __name__ == '__main__':
 
     import os
 
-    # graph = result.makegraphicaltree()
-    # name = os.path.splitext(sys.argv[1])[0] + '-ast.pdf'
-    # graph.write_pdf(name)
-    # print("wrote ast to", name)
+    graph = result.makegraphicaltree()
+    name = os.path.splitext(sys.argv[1])[0] + '-ast.pdf'
+    graph.write_pdf(name)
+    print("wrote ast to", name)

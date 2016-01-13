@@ -135,10 +135,6 @@ class WhaleNode(Node):
     type = 'whale'
 
 
-class PrintNode(Node):
-    type = 'print'
-
-
 class EntryNode(Node):
     type = 'ENTRY'
 

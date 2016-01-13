@@ -1,9 +1,7 @@
 hey a got 10~
-jeez(a fattest 8)
+hey b got 20~
+SHOWMEWHATYOUGOT(a)~
+jeez(a fattest b)
 PIF
-	print(a)~
-	a got a - 1~
-	a got a / 4~
+    a got b~
 PAF
-
-a got 10~
