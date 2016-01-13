@@ -127,7 +127,7 @@ class OpNode(Node):
         return "%s (%s)" % (self.op, self.nbargs)
 
 
-class AssignNode(Node):
+class HeyNode(Node):
     type = '='
 
 
@@ -164,6 +164,10 @@ class CaseNode(Node):
 
 class SchwiftNode(Node):
     type = 'schwift'
+
+
+class ConditionNode(Node):
+    type = 'condition'
 
 
 def add_to_class(_class):
