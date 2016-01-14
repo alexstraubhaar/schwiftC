@@ -56,6 +56,7 @@ def p_statement(p):
         p[0] = p[1]
 
 
+# STRUCTURE
 def p_structure_meeseeks_call(p):
     """structure : IDENTIFIER '(' meeseeks_call_param ')'"""
     p[0] = AST.MeeseeksCallNode([AST.TokenNode(p[1]), p[3]])
@@ -71,22 +72,22 @@ def p_meeseeks_call_params(p):
 
 
 def p_structure_whale(p):
-    """structure : WHALE '(' condition ')' PIF program PAF"""
+    """structure : WHALE '(' condition ')' PIF program_statement PAF"""
     p[0] = AST.WhaleNode([p[3], p[6]])
 
 
 def p_structure_jeez(p):
-    """structure : JEEZ '(' condition ')' PIF program PAF"""
+    """structure : JEEZ '(' condition ')' PIF program_statement PAF"""
     p[0] = AST.JeezNode([p[3], p[6]])
 
 
 def p_structure_wldd(p):
-    """structure : WUBBALUBBADUBDUBS '(' assignation '~' condition '~' assignation ')' PIF program PAF"""
+    """structure : WUBBALUBBADUBDUBS '(' assignation '~' condition '~' assignation ')' PIF program_statement PAF"""
     p[0] = AST.WubbalubbadubdubsNode([p[3], p[5], p[7], p[10]])
 
 
 def p_structure_cando(p):
-    """structure : CANDO PIF program PAF WHALE '(' condition ')'"""
+    """structure : CANDO PIF program_statement PAF WHALE '(' condition ')'"""
     p[0] = AST.CandoNode([p[7], p[3]])
 
 
@@ -96,8 +97,8 @@ def p_structure_schwift(p):
 
 
 def p_structure_cases(p):
-    """cases : DEFAULT ':' program SHUTUPMORTY '~'
-    | HEYRICK expression ':' program SHUTUPMORTY '~' cases"""
+    """cases : DEFAULT ':' program_statement SHUTUPMORTY '~'
+    | HEYRICK expression ':' program_statement SHUTUPMORTY '~' cases"""
     try:
         p[0] = AST.CaseNode([p[2], p[4], p[7]])
     except IndexError:

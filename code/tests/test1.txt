@@ -11,7 +11,17 @@ PIF
 PAF mpfh~
 
 ==========================================
+
 hey a got 10~
 a got 20~
 comonMorty(a)~
 mpfh kek got a~
+
+SHOWMEWHATYOUGOT(a)~
+
+jeez(a tinier b)
+PIF
+    SHOWMEWHATYOUGOT(d)~
+PAF~
+
+a got 30~
