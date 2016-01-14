@@ -136,7 +136,7 @@ class OpNode(Node):
 
 
 class Assign(Node):
-    type = '='
+    type = 'assign'
 
 
 class WhaleNode(Node):
@@ -204,3 +204,11 @@ class MeeseeksParamNode(Node):
 
 class MeeseeksNode(Node):
     type = "meeseeks"
+
+
+class MeeseeksCallNode(Node):
+    type = 'meeseeks_call'
+
+
+class MeeseeksCallParamNode(Node):
+    type = 'meeseeks_call_param'

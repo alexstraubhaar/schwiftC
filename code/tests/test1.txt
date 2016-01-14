@@ -1,10 +1,10 @@
-meeseeks hey b
+meeseeks comonMorty hey b
 PIF
     b got b * 2~
     didit b~
 PAF hey~
 
-meeseeks hey b, fake d, mpfh k
+meeseeks coolFuncName hey b, fake d, mpfh k
 PIF
     b got 10~
     didit k~
@@ -12,3 +12,6 @@ PAF mpfh~
 
 ==========================================
 hey a got 10~
+a got 20~
+comonMorty(a)~
+mpfh kek got a~

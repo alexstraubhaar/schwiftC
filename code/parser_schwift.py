@@ -32,8 +32,8 @@ def p_program_statement(p):
 
 # MEESEEKS
 def p_meeseeks(p):
-    """meeseek : MEESEEKS meeseeks_params PIF program_statement DIDIT IDENTIFIER '~' PAF vartype"""
-    p[0] = AST.MeeseeksNode([p[2], p[4], AST.TokenNode(p[6]), p[9]])
+    """meeseek : MEESEEKS IDENTIFIER meeseeks_params PIF program_statement DIDIT IDENTIFIER '~' PAF vartype"""
+    p[0] = AST.MeeseeksNode([AST.TokenNode(p[2]), p[3], p[5], AST.TokenNode(p[7]), p[10]])
 
 
 def p_meeseeks_params(p):
@@ -54,6 +54,20 @@ def p_statement(p):
         p[0] = AST.SHOWMEWHATYOUGOTNode(AST.TokenNode(p[3]))
     except IndexError:
         p[0] = p[1]
+
+
+def p_structure_meeseeks_call(p):
+    """structure : IDENTIFIER '(' meeseeks_call_param ')'"""
+    p[0] = AST.MeeseeksCallNode([AST.TokenNode(p[1]), p[3]])
+
+
+def p_meeseeks_call_params(p):
+    """meeseeks_call_param : IDENTIFIER
+    | IDENTIFIER ',' meeseeks_call_param"""
+    try:
+        p[0] = AST.MeeseeksCallParamNode([AST.TokenNode(p[1]), p[3]])
+    except IndexError:
+        p[0] = AST.MeeseeksCallParamNode(AST.TokenNode(p[1]))
 
 
 def p_structure_whale(p):
