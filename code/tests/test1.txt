@@ -1,7 +1,6 @@
-hey a got 10~
-hey b got 20~
-SHOWMEWHATYOUGOT(a)~
-jeez(a fattest b)
+wubbalubbadubdubs(hey i got 0~ i tiniest 10~ i got i * 1)
 PIF
-    a got b~
-PAF
+    SHOWMEWHATYOUGOT(i)~
+PAF~
+
+

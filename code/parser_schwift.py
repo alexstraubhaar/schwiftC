@@ -5,9 +5,9 @@ from lex_schwift import tokens
 
 __authors__ = 'Alex and *BURP* Thomas'
 
+
 def p_program_statement(p):
     """ program : statement '~'
-    | structure program
     | statement '~' program"""
     try:
         p[0] = AST.ProgramNode([p[1]] + p[3].children)
@@ -17,34 +17,35 @@ def p_program_statement(p):
 
 def p_statement(p):
     """statement : assignation
-    | SHOWMEWHATYOUGOT expression"""
+    | structure
+    | SHOWMEWHATYOUGOT '(' expression ')'"""
     try:
-        p[0] = AST.SHOWMEWHATYOUGOTNode(p[2])
+        p[0] = AST.SHOWMEWHATYOUGOTNode(AST.TokenNode(p[3]))
     except IndexError:
         p[0] = p[1]
 
 
 def p_structure_whale(p):
     """structure : WHALE '(' condition ')' PIF program PAF"""
-    p[0] = AST.WhaleNode([p[2], p[4]])
+    p[0] = AST.WhaleNode([p[3], p[6]])
 
 
 def p_structure_jeez(p):
     """structure : JEEZ '(' condition ')' PIF program PAF"""
-    p[0] = AST.JeezNode([p[2], p[4]])
+    p[0] = AST.JeezNode([p[3], p[6]])
 
 
-def p_structure_for(p):
-    """structure : WUBBALUBBADUBDUBS '(' assignation '~' condition '~' expression ')' PIF program PAF"""
+def p_structure_wldd(p):
+    """structure : WUBBALUBBADUBDUBS '(' assignation '~' condition '~' assignation ')' PIF program PAF"""
     p[0] = AST.WubbalubbadubdubsNode([p[3], p[5], p[7], p[10]])
 
 
-def p_structure_do(p):
-    """structure : CANDO PIF condition PAF WHALE '(' condition ')'"""
+def p_structure_cando(p):
+    """structure : CANDO PIF program PAF WHALE '(' condition ')'"""
     p[0] = AST.CandoNode([p[7], p[3]])
 
 
-def p_structure_switch(p):
+def p_structure_schwift(p):
     """structure : SCHWIFT '(' IDENTIFIER ')' PIF cases PAF"""
     p[0] = AST.SchwiftNode([p[3], p[5]])
 
@@ -62,7 +63,7 @@ def p_condition(p):
     | expression TINIER expression
     | expression IS expression
     | expression ISNOT expression"""
-    p[0] = AST.ConditionNode([p[1], p[2], p[3]])
+    p[0] = AST.ConditionNode([p[1], AST.TokenNode(p[2]), p[3]])
 
 
 # EXPRESSIONS #
@@ -96,12 +97,12 @@ def p_assign(p):
     | SCHMECKLE IDENTIFIER GOT expression
     | MPFH IDENTIFIER GOT expression
     | FAKE IDENTIFIER GOT expression"""
-    p[0] = AST.HeyNode([AST.TokenNode(p[2]), p[4]])
+    p[0] = AST.Assign([AST.TokenNode(p[1]), AST.TokenNode(p[2]), p[4]])
 
 
 def p_reassign(p):
     """assignation : IDENTIFIER GOT expression"""
-    p[0] = AST.HeyNode([AST.TokenNode(p[1]), p[3]])
+    p[0] = AST.ReAssign([AST.TokenNode(p[1]), p[3]])
 
 
 # PRECEDENCES #
@@ -114,12 +115,7 @@ precedence = (
 
 # YACC UTILS #
 def p_error(p):
-    # try:
-    #     print("Syntax error in line %d" % p.lineno)
-    #     p.lexer.skip(1)
-    # except AttributeError:
-    #     print("Syntax error")
-    print("Syntax error in line %d" % p.lineno)
+    print("Syntax error in line {} => ({})".format(p.lineno, p))
     p.lexer.skip(1)
 
 
@@ -136,7 +132,6 @@ if __name__ == '__main__':
 
     result = yacc.parse(prog)
     print(result)
-    print("=========\n" + prog + "\n=========\n")
 
     import os
 

@@ -127,7 +127,7 @@ class OpNode(Node):
         return "%s (%s)" % (self.op, self.nbargs)
 
 
-class HeyNode(Node):
+class Assign(Node):
     type = '='
 
 
@@ -147,7 +147,7 @@ class JeezNode(Node):
 
 
 class SHOWMEWHATYOUGOTNode(Node):
-    type = 'showmewhatyougot'
+    type = 'SHOWMEWHATYOUGOT'
 
 
 class WubbalubbadubdubsNode(Node):
@@ -170,9 +170,17 @@ class ConditionNode(Node):
     type = 'condition'
 
 
+class ConditionTokenNode(Node):
+    type = 'condition_token'
+
+
 def add_to_class(_class):
     def decorator(func):
         setattr(_class, func.__name__, func)
         return func
 
     return decorator
+
+
+class ReAssign(Node):
+    type = 'reassign'
