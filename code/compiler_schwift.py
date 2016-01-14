@@ -29,6 +29,7 @@ def compile(self):
     return c_code
 
 
+
 @addToClass(AST.ProgramStatementNode)
 def compile(self):
     c_code = "int main()\n{\n"
