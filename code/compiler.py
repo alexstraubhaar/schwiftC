@@ -49,7 +49,7 @@ if __name__ == '__main__':
     ast = parse(prog)
 
     compiled = ast.compile()
-    name = os.path.splittext(sys.argv[1])[0]+'.vm'
+    name = os.path.splittext(sys.argv[1])[0]+'.c'
     outfile = open(name, 'w')
     outfile.write(compiled)
     outfile.close()
