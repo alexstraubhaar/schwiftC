@@ -12,19 +12,53 @@ operations = {
 vars = {}
 
 
+# PROGRAMS
+@addToClass(AST.ProgramNode)
+def compile(self):
+    c_code = ""
+    for c in self.children:
+        c_code += c.compile()
+    return c_code
+
+
+@addToClass(AST.ProgramMeeseeksNode)
+def compile(self):
+    c_code = "#include <stdio.h>\n\n"
+    for c in self.children:
+        c_code += c.compile()
+    return c_code
+
+
 @addToClass(AST.ProgramStatementNode)
 def compile(self):
+    c_code = "int main()\n{\n"
     for c in self.children:
-        c.compile()
+        c_code += "\t" + "kek"  # c.compile()
+    c_code += "\n\treturn 0;\n}"
+    return c_code
+
+
+@addToClass(AST.MeeseeksNode)
+def compile(self):
+    c = self.children
+    return "{} {}({})\n{{\t{}\n}}".format(c[3], c[0].compile(), c[1], c[2])
+
+
+@addToClass(AST.MeeseeksParamNode)
+def compile(self):
+    c_code = ""
+    for c in self.children:
+        c_code += c.compile()
+    return c_code
 
 
 @addToClass(AST.TokenNode)
 def compile(self):
-    if isinstance(self.tok, str):
-        try:
-            return vars[self.tok]
-        except KeyError:
-            print("*** Error: variable %s undefined!" % self.tok)
+    # if isinstance(self.tok, str):
+    #     try:
+    #         return vars[self.tok]
+    #     except KeyError:
+    #         print("*** Error: variable %s undefined!" % self.tok)
     return self.tok
 
 
@@ -43,7 +77,7 @@ def compile(self):
 
 @addToClass(AST.SHOWMEWHATYOUGOTNode)
 def compile(self):
-    print(self.children[0].compile())
+    return "printf(\"{}\")".format(self.children[0].compile());
 
 
 if __name__ == '__main__':
@@ -55,7 +89,7 @@ if __name__ == '__main__':
     ast = parse(prog)
 
     compiled = ast.compile()
-    name = os.path.splittext(sys.argv[1])[0] + '.c'
+    name = os.path.splitext(sys.argv[1])[0] + '.c'
     outfile = open(name, 'w')
     outfile.write(compiled)
     outfile.close()

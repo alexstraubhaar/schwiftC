@@ -8,7 +8,8 @@ __authors__ = 'Alex and *BURP* Thomas'
 
 # PROGRAMS
 def p_program(p):
-    """program : program_meeseeks PROGRAM_SEPARATOR program_statement"""
+    """program : program_meeseeks PROGRAM_SEPARATOR program_statement
+    | program_statement"""
     p[0] = AST.ProgramNode([p[1], p[3]])
 
 
@@ -134,7 +135,7 @@ def p_expression_paren(p):
 
 
 def p_expression_minus(p):
-    """expression : ADD_OP expression %prec UMINUS"""
+    """expression : MUL_OP expression %prec UMINUS"""
     p[0] = AST.OpNode(p[1], [p[2]])
 
 
