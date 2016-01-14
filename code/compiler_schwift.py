@@ -17,7 +17,11 @@ vars = {}
 def compile(self):
     c_code = ""
     for c in self.children:
+        if c.type == 'program_statement':
+            c_code += "int main()\n{\n"
         c_code += c.compile()
+        if c.type == 'program_statement':
+            c_code += "\n\treturn 0;\n}"
     return c_code
 
 
@@ -29,28 +33,29 @@ def compile(self):
     return c_code
 
 
-
-
 @addToClass(AST.ProgramStatementNode)
 def compile(self):
-    c_code = "int main()\n{\n"
+    c_code = ""
     for c in self.children:
         c_code += "\t" + "kek"  # c.compile()
-    c_code += "\n\treturn 0;\n}"
+    c_code += ""
     return c_code
 
 
 @addToClass(AST.MeeseeksNode)
 def compile(self):
     c = self.children
-    return "{} {}({})\n{{\t{}\n}}".format(c[3], c[0].compile(), c[1], c[2])
+    c_code = "{} {}({})\n".format(c[4].compile(), c[0].compile(), c[1].compile())
+    c_code += "{{\n\t{}\n}}\n".format(c[2].compile(), c[3].compile())
+    return c_code
 
 
 @addToClass(AST.MeeseeksParamNode)
 def compile(self):
-    c_code = ""
-    for c in self.children:
-        c_code += c.compile()
+    c = self.children
+    c_code = "{} {}".format(c[0].compile(), c[1].compile())
+    if len(c) > 2:
+        c_code += ", {}".format(c[2].compile())
     return c_code
 
 
