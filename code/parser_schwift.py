@@ -141,7 +141,7 @@ def p_expression_minus(p):
 # ASSIGNATION #
 def p_assign(p):
     """assignation : vartype IDENTIFIER GOT expression"""
-    p[0] = AST.Assign([p[1], AST.TokenNode(p[2]), p[4]])
+    p[0] = AST.AssignNode([p[1], AST.TokenNode(p[2]), p[4]])
 
 
 def p_reassign(p):

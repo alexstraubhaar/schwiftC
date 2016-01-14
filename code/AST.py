@@ -135,7 +135,7 @@ class OpNode(Node):
         return "%s (%s)" % (self.op, self.nbargs)
 
 
-class Assign(Node):
+class AssignNode(Node):
     type = 'assign'
 
 
@@ -182,14 +182,6 @@ class ConditionTokenNode(Node):
     type = 'condition_token'
 
 
-def add_to_class(_class):
-    def decorator(func):
-        setattr(_class, func.__name__, func)
-        return func
-
-    return decorator
-
-
 class ReAssign(Node):
     type = 'reassign'
 
@@ -212,3 +204,11 @@ class MeeseeksCallNode(Node):
 
 class MeeseeksCallParamNode(Node):
     type = 'meeseeks_call_param'
+
+
+def addToClass(_class):
+    def decorator(func):
+        setattr(_class, func.__name__, func)
+        return func
+
+    return decorator
