@@ -2,6 +2,15 @@ import ply.lex as lex
 
 __authors__ = 'Alex and *BURP* Thomas'
 
+var_types = {
+    'hey',  # int
+    'fake',  # float
+    'thong',  # string
+    'isit',  # bool
+    'schmeckle',  # char
+    'mpfh',  # void
+}
+
 reserved_words = {
     # Conditions
     'got',  # =
@@ -32,8 +41,8 @@ reserved_words = {
     'whale',  # while
 
     # Methods
-    # 'meeseeks', # function
-    # 'didit',  # return
+    'meeseeks', # function
+    'didit',  # return
 
     # PIF PAF
     'PIF',  # {
@@ -41,13 +50,19 @@ reserved_words = {
 }
 
 tokens = (
+             'PROGRAM_SEPARATOR',
              'NUMBER',
              'ADD_OP',
              'MUL_OP',
              'IDENTIFIER'
          ) + tuple(map(lambda s: s.upper(), reserved_words))
 
-literals = '()~:'
+literals = '()~:,'
+
+
+def t_PROGRAM_SEPARATOR(t):
+    r'[=]{42}'
+    return t
 
 
 def t_IDENTIFIER(t):

@@ -11,7 +11,7 @@ operations = {
 
 vars = {}
 
-@addToClass(AST.ProgramNode)
+@addToClass(AST.ProgramStatementNode)
 def compile(self):
     for c in self.children:
         c.compile()

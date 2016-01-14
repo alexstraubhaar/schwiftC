@@ -6,15 +6,46 @@ from lex_schwift import tokens
 __authors__ = 'Alex and *BURP* Thomas'
 
 
-def p_program_statement(p):
-    """ program : statement '~'
-    | statement '~' program"""
+# PROGRAMS
+def p_program(p):
+    """program : program_meeseeks PROGRAM_SEPARATOR program_statement"""
+    p[0] = AST.ProgramNode([p[1], p[3]])
+
+
+def p_program_meeseeks(p):
+    """program_meeseeks : meeseek '~'
+    | meeseek '~' program_meeseeks"""
     try:
-        p[0] = AST.ProgramNode([p[1]] + p[3].children)
+        p[0] = AST.ProgramMeeseeksNode([p[1]] + p[3].children)
     except IndexError:
-        p[0] = AST.ProgramNode(p[1])
+        p[0] = AST.ProgramMeeseeksNode(p[1])
 
 
+def p_program_statement(p):
+    """program_statement : statement '~'
+    | statement '~' program_statement"""
+    try:
+        p[0] = AST.ProgramStatementNode([p[1]] + p[3].children)
+    except IndexError:
+        p[0] = AST.ProgramStatementNode(p[1])
+
+
+# MEESEEKS
+def p_meeseeks(p):
+    """meeseek : MEESEEKS IDENTIFIER meeseeks_params PIF program_statement DIDIT IDENTIFIER '~' PAF vartype"""
+    p[0] = AST.MeeseeksNode([AST.TokenNode(p[2]), p[3], p[5], AST.TokenNode(p[7]), p[10]])
+
+
+def p_meeseeks_params(p):
+    """meeseeks_params : vartype IDENTIFIER
+    | vartype IDENTIFIER ',' meeseeks_params"""
+    try:
+        p[0] = AST.MeeseeksParamNode([p[1], AST.TokenNode(p[2]), p[4]])
+    except IndexError:
+        p[0] = AST.MeeseeksParamNode([p[1], AST.TokenNode(p[2])])
+
+
+# STATEMENTS
 def p_statement(p):
     """statement : assignation
     | structure
@@ -23,6 +54,20 @@ def p_statement(p):
         p[0] = AST.SHOWMEWHATYOUGOTNode(AST.TokenNode(p[3]))
     except IndexError:
         p[0] = p[1]
+
+
+def p_structure_meeseeks_call(p):
+    """structure : IDENTIFIER '(' meeseeks_call_param ')'"""
+    p[0] = AST.MeeseeksCallNode([AST.TokenNode(p[1]), p[3]])
+
+
+def p_meeseeks_call_params(p):
+    """meeseeks_call_param : IDENTIFIER
+    | IDENTIFIER ',' meeseeks_call_param"""
+    try:
+        p[0] = AST.MeeseeksCallParamNode([AST.TokenNode(p[1]), p[3]])
+    except IndexError:
+        p[0] = AST.MeeseeksCallParamNode(AST.TokenNode(p[1]))
 
 
 def p_structure_whale(p):
@@ -47,13 +92,16 @@ def p_structure_cando(p):
 
 def p_structure_schwift(p):
     """structure : SCHWIFT '(' IDENTIFIER ')' PIF cases PAF"""
-    p[0] = AST.SchwiftNode([p[3], p[5]])
+    p[0] = AST.SchwiftNode([AST.TokenNode(p[3]), p[6]])
 
 
 def p_structure_cases(p):
     """cases : DEFAULT ':' program SHUTUPMORTY '~'
     | HEYRICK expression ':' program SHUTUPMORTY '~' cases"""
-    p[0] = AST.CaseNode([p[2], p[4], p[7]])
+    try:
+        p[0] = AST.CaseNode([p[2], p[4], p[7]])
+    except IndexError:
+        p[0] = AST.CaseDefaultNode(p[3])
 
 
 def p_condition(p):
@@ -91,18 +139,23 @@ def p_expression_minus(p):
 
 # ASSIGNATION #
 def p_assign(p):
-    """assignation : HEY IDENTIFIER GOT expression
-    | THONG IDENTIFIER GOT expression
-    | ISIT IDENTIFIER GOT expression
-    | SCHMECKLE IDENTIFIER GOT expression
-    | MPFH IDENTIFIER GOT expression
-    | FAKE IDENTIFIER GOT expression"""
-    p[0] = AST.Assign([AST.TokenNode(p[1]), AST.TokenNode(p[2]), p[4]])
+    """assignation : vartype IDENTIFIER GOT expression"""
+    p[0] = AST.Assign([p[1], AST.TokenNode(p[2]), p[4]])
 
 
 def p_reassign(p):
     """assignation : IDENTIFIER GOT expression"""
     p[0] = AST.ReAssign([AST.TokenNode(p[1]), p[3]])
+
+
+def p_vartype(p):
+    """vartype : HEY
+    | THONG
+    | ISIT
+    | SCHMECKLE
+    | MPFH
+    | FAKE"""
+    p[0] = AST.TokenNode(p[1])
 
 
 # PRECEDENCES #

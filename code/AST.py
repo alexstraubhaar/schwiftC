@@ -100,7 +100,15 @@ class Node:
 
 
 class ProgramNode(Node):
-    type = 'Program'
+    type = 'program'
+
+
+class ProgramStatementNode(Node):
+    type = 'program_statement'
+
+
+class ProgramMeeseeksNode(Node):
+    type = 'program_meeseeks'
 
 
 class TokenNode(Node):
@@ -128,7 +136,7 @@ class OpNode(Node):
 
 
 class Assign(Node):
-    type = '='
+    type = 'assign'
 
 
 class WhaleNode(Node):
@@ -184,3 +192,23 @@ def add_to_class(_class):
 
 class ReAssign(Node):
     type = 'reassign'
+
+
+class CaseDefaultNode(Node):
+    type = 'case_default'
+
+
+class MeeseeksParamNode(Node):
+    type = "meeseeks_param"
+
+
+class MeeseeksNode(Node):
+    type = "meeseeks"
+
+
+class MeeseeksCallNode(Node):
+    type = 'meeseeks_call'
+
+
+class MeeseeksCallParamNode(Node):
+    type = 'meeseeks_call_param'
