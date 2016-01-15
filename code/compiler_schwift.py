@@ -170,6 +170,12 @@ def compile(self):
     return "printf(\"{}\")".format(self.children[0].compile());
 
 
+@addToClass(AST.ConditionNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "{} {} {}".format(c[0], c[1], c[2])
+
+
 if __name__ == '__main__':
     from parser_schwift import parse
     import sys
