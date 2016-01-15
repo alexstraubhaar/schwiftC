@@ -29,7 +29,14 @@ conditions = {
     'isnot': '!='
 }
 
-TAB = '\t'
+op = {
+    '*': '+',
+    '/': '-',
+    '+': '*',
+    '-': '/'
+}
+
+TAB = '    '
 
 
 # PROGRAMS
@@ -116,7 +123,7 @@ def compile(self, prefix=''):
 @addToClass(AST.SHOWMEWHATYOUGOTNode)
 def compile(self, prefix=''):
     c = [ch.compile() for ch in self.children]
-    return "{}printf({});\n".format(prefix, c[0])
+    return "{}printf({});\n".format(prefix, c[0].compile())
 
 
 # STRUCTURES
@@ -146,14 +153,20 @@ def compile(self, prefix=''):
     c_code = "{}do\n".format(prefix)
     c_code += "{}{{\n".format(prefix)
     c_code += "{}".format(c[0].compile(prefix + TAB))
-    c_code += "{}}}while({});".format(prefix, c[1].compile())
+    c_code += "{}}}while({});\n\n".format(prefix, c[1].compile())
     return c_code
 
 
 @addToClass(AST.WubbalubbadubdubsNode)
 def compile(self, prefix=''):
     c = self.children
-    c_code = "{}for({};{};{})\n".format(prefix, c[0].compile(), c[1].compile(), c[2].compile())
+    c0 = c[0].children
+    c2 = c[2].children
+    first = "{} {} = {}".format(vartypes[c0[0].tok], c0[1].tok, c0[2].tok)
+    second = c[1].compile()
+    third = "{} = {}".format(c2[0].tok, c2[1].compile())
+
+    c_code = "{}for({};{};{})\n".format(prefix, first, second, third)
     c_code += "{}{{\n".format(prefix)
     c_code += "{}".format(c[3].compile(prefix + TAB))
     c_code += "{}}}\n".format(prefix)
@@ -163,8 +176,7 @@ def compile(self, prefix=''):
 @addToClass(AST.SchwiftNode)
 def compile(self, prefix=''):
     c = self.children
-    c_code = "{}switch({})\n".format(prefix, c[0].compile())
-    c_code += "{}{{\n".format(prefix)
+    c_code = "{}switch({}) {{\n".format(prefix, c[0].compile())
     c_code += "{}".format(c[1].compile(prefix + TAB))
     c_code += "{}}}\n".format(prefix)
     return c_code
@@ -172,18 +184,21 @@ def compile(self, prefix=''):
 
 @addToClass(AST.HeyRickNode)
 def compile(self, prefix=''):
-    c = [ch.compile() for ch in self.children]
-    c_code = "case {}:\n".format(c[0])
-    c_code += "\t\t{}\n".format(c[1])
-    c_code += "\t\tbreak;\n"
-    c_code += "\t{}".format([2])
+    c = self.children
+    c_code = "{}case {}:\n".format(prefix, c[0].compile())
+    c_code += "{}{}".format(prefix + TAB, c[1].compile())
+    c_code += "{}break;\n".format(prefix + TAB)
+    c_code += "{}".format(c[2].compile(prefix))
     return c_code
 
 
 @addToClass(AST.CaseDefaultNode)
 def compile(self, prefix=''):
-    c = [ch.compile() for ch in self.children]
-    return "case default:\n\t\t{}\n\t\tbreak;\n}}".format(c[0])
+    c = self.children
+    c_code = "{}default:\n".format(prefix)
+    c_code += "{}{}".format(prefix + TAB, c[0].compile())
+    c_code += "{}break;\n".format(prefix + TAB)
+    return c_code
 
 
 @addToClass(AST.TokenNode)
@@ -199,7 +214,7 @@ def compile(self, prefix=''):
 @addToClass(AST.OpNode)
 def compile(self, prefix=''):
     c = [ch.compile() for ch in self.children]
-    return "{} {} {}".format(c[0], self.op, c[1])
+    return "{} {} {}".format(c[0], op[self.op], c[1])
 
 
 @addToClass(AST.ConditionNode)

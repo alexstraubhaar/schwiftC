@@ -12,15 +12,35 @@ PAF mpfh~
 
 ==========================================
 
+schwift(b)
+PIF
+    heyrick 0:
+        b got a~
+        shutupmorty~
+    default:
+        hey i got 10~
+        shutupmorty~
+PAF~
+
 jeez(a fattest b)
 PIF
     a got kek~
+    b got kek~
 PAF~
 
 whale(a fattest b)
 PIF
     a got kek~
+    whale(c fattest b)
+    PIF
+        mpfh c got 10~
+    PAF~
 PAF~
+
+cando
+PIF
+    a got kek~
+PAF whale(a fattest b)~
 
 wubbalubbadubdubs(hey i got 0~i tinier 10~i got i * 1)
 PIF
