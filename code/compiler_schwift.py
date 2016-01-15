@@ -46,13 +46,13 @@ def compile(self):
 def compile(self):
     c = self.children
     c_code = "{} {}({})\n".format(c[4].compile(), c[0].compile(), c[1].compile())
-    c_code += "{{\n\t{}\n}}\n".format(c[2].compile(), c[3].compile())
+    c_code += "{{\n\t{}\n}}\n\n".format(c[2].compile(), c[3].compile())
     return c_code
 
 
 @addToClass(AST.MeeseeksParamNode)
 def compile(self):
-    c = self.children
+    c = self.children0
     c_code = "{} {}".format(c[0].compile(), c[1].compile())
     if len(c) > 2:
         c_code += ", {}".format(c[2].compile())
