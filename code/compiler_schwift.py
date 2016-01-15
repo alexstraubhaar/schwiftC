@@ -70,10 +70,31 @@ def compile(self):
     return c_code
 
 
+@addToClass(AST.MeeseeksCallNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "{}({});\n".format(c[0], c[1])
+
+
+@addToClass(AST.MeeseeksCallParamNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    c_code = "{}".format(c[0])
+    if len(c) > 1:
+        c_code += ", {}".format(c[1].compile())
+    return c_code
+
+
 # STATEMENTS
 @addToClass(AST.AssignNode)
 def compile(self):
-    vars[self.children[0].tok] = self.children[1].compile()
+    c = [ch.compile() for ch in self.children]
+    return "{} {} = {};\n".format(c[0], c[1], c[2])
+
+
+@addToClass(AST.ReAssign)
+def compile(self):
+    return "{} = {};\n".format(self.children[0].compile(), self.children[0].compile())
 
 
 @addToClass(AST.SHOWMEWHATYOUGOTNode)
