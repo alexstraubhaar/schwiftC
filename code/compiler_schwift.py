@@ -140,10 +140,8 @@ def compile(self):
 
 @addToClass(AST.OpNode)
 def compile(self):
-    args = [c.compile() for c in self.children]
-    if len(args) == 1:
-        args.insert(0, 0)
-    return reduce(operations[self.op], args)
+    c = [ch.compile() for ch in self.children]
+    return "{} {} {}".format(c[1], c[0], c[2])
 
 
 @addToClass(AST.SHOWMEWHATYOUGOTNode)
