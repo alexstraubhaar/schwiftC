@@ -6,16 +6,31 @@ PAF hey~
 
 meeseeks coolFuncName hey b, fake d, mpfh k
 PIF
-    b got 10~
+    b got 10 * (10 / 4)~
     didit k~
 PAF mpfh~
 
 ==========================================
 
+jeez(a fattest b)
+PIF
+    a got kek~
+PAF~
+
+whale(a fattest b)
+PIF
+    a got kek~
+PAF~
+
+wubbalubbadubdubs(hey i got 0~i tinier 10~i got i * 1)
+PIF
+    SHOWMEWHATYOUGOT(i)~
+PAF~
+
 hey a got 10~
 a got 20~
 comonMorty(a)~
-mpfh kek got a~
+kek got a~
 
 SHOWMEWHATYOUGOT(a)~
 

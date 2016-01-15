@@ -101,7 +101,7 @@ def p_structure_cases(p):
     """cases : DEFAULT ':' program_statement SHUTUPMORTY '~'
     | HEYRICK expression ':' program_statement SHUTUPMORTY '~' cases"""
     try:
-        p[0] = AST.CaseNode([p[2], p[4], p[7]])
+        p[0] = AST.HeyRickNode([p[2], p[4], p[7]])
     except IndexError:
         p[0] = AST.CaseDefaultNode(p[3])
 

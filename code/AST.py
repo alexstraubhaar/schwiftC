@@ -166,7 +166,7 @@ class CandoNode(Node):
     type = 'cando'
 
 
-class CaseNode(Node):
+class HeyRickNode(Node):
     type = 'case'
 
 
