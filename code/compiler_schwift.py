@@ -20,6 +20,15 @@ vartypes = {
     'mpfh': 'void'
 }
 
+conditions = {
+    'fattest': '>',
+    'fatter': '>=',
+    'tiniest': '<',
+    'tinier': '<=',
+    'is': '==',
+    'isnot': '!='
+}
+
 
 # PROGRAMS
 @addToClass(AST.ProgramNode)
