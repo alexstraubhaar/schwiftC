@@ -11,6 +11,15 @@ operations = {
 
 vars = {}
 
+vartypes = {
+    'hey': 'int',
+    'fake': 'float',
+    'thong': 'string',
+    'isit': 'bool',
+    'schmeckle': 'char',
+    'mpfh': 'void'
+}
+
 
 # PROGRAMS
 @addToClass(AST.ProgramNode)
@@ -37,26 +46,86 @@ def compile(self):
 def compile(self):
     c_code = ""
     for c in self.children:
-        c_code += "\t" + "kek"  # c.compile()
+        c_code += "\t" + c.compile()
     c_code += ""
     return c_code
 
 
+# Meeseeks
 @addToClass(AST.MeeseeksNode)
 def compile(self):
     c = self.children
-    c_code = "{} {}({})\n".format(c[4].compile(), c[0].compile(), c[1].compile())
+    return_type = vartypes[c[4].compile()]
+    c_code = "{} {}({})\n".format(return_type, c[0].compile(), c[1].compile())
     c_code += "{{\n\t{}\n}}\n\n".format(c[2].compile(), c[3].compile())
     return c_code
 
 
 @addToClass(AST.MeeseeksParamNode)
 def compile(self):
-    c = self.children0
-    c_code = "{} {}".format(c[0].compile(), c[1].compile())
+    c = self.children
+    c_code = "{} {}".format(vartypes[c[0].compile()], c[1].compile())
     if len(c) > 2:
         c_code += ", {}".format(c[2].compile())
     return c_code
+
+
+# STATEMENTS
+@addToClass(AST.AssignNode)
+def compile(self):
+    vars[self.children[0].tok] = self.children[1].compile()
+
+
+@addToClass(AST.SHOWMEWHATYOUGOTNode)
+def compile(self):
+    return "printf({});".format(self.children[0].compile())
+
+
+# STRUCTURES
+@addToClass(AST.JeezNode)
+def compile(self):
+    c = self.children
+    return "if({})\n{{\t{}\n}}\n\n".format(c[0].compile(), c[1].compile())
+
+
+@addToClass(AST.WhaleNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "whale({})\n{{\t{}\n}}\n\n".format(c[0], c[1])
+
+
+@addToClass(AST.CandoNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "do\n{{\t{}\n}}while({});\n\n".format(c[0], c[1])
+
+
+@addToClass(AST.WubbalubbadubdubsNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "for({};{};{})\n{{\n\t{}\n}}\n\n".format(c[0], c[1], c[2], c[3])
+
+
+@addToClass(AST.SchwiftNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "switch({})\n{{\n\t{}\n}}\n\n".format(c[0], c[1])
+
+
+@addToClass(AST.CaseNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    c_code = "case {}:\n".format(c[0])
+    c_code += "\t\t{}\n".format(c[1])
+    c_code += "\t\tbreak;\n"
+    c_code += "\t{}".format([2])
+    return c_code
+
+
+@addToClass(AST.CaseDefaultNode)
+def compile(self):
+    c = [ch.compile() for ch in self.children]
+    return "case default:\n\t\t{}\n\t\tbreak;\n}}".format(c[0])
 
 
 @addToClass(AST.TokenNode)
@@ -75,11 +144,6 @@ def compile(self):
     if len(args) == 1:
         args.insert(0, 0)
     return reduce(operations[self.op], args)
-
-
-@addToClass(AST.AssignNode)
-def compile(self):
-    vars[self.children[0].tok] = self.children[1].compile()
 
 
 @addToClass(AST.SHOWMEWHATYOUGOTNode)

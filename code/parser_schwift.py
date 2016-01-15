@@ -89,7 +89,7 @@ def p_structure_wldd(p):
 
 def p_structure_cando(p):
     """structure : CANDO PIF program_statement PAF WHALE '(' condition ')'"""
-    p[0] = AST.CandoNode([p[7], p[3]])
+    p[0] = AST.CandoNode([p[3], p[7]])
 
 
 def p_structure_schwift(p):

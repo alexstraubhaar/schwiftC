@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-hey comonMorty(hey b)
+int comonMorty(int b)
 {
 		kek
 }
 
-mpfh coolFuncName(hey b, fake d, mpfh k)
+void coolFuncName(int b, float d, void k)
 {
 		kek
 }
